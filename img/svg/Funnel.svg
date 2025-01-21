@@ -1,0 +1,149 @@
+<svg width="804" height="1149" viewBox="0 0 804 1149" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="804" height="1149" fill="#F5F5F5"/>
+<g id="Funnel">
+<g id="Layer5" clip-path="url(#clip0_0_1)">
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M341.018 989C303.727 989 266.435 973.396 264.658 953.86L242.936 831.667C242.455 830.054 242.159 828.412 242.061 826.753L242 826.395H242.042C242.03 826.102 242.024 825.804 242.024 825.511C242.024 799.271 286.342 778 341.012 778C395.682 778 440 799.271 440 825.511C440 827.71 439.654 829.877 438.985 831.997L417.419 953.307C416.303 973.099 378.661 989 341.018 989Z" fill="#FFE9E5"/>
+<g id="Clip path group">
+<mask id="mask0_0_1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="242" y="774" width="198" height="108">
+<g id="clip0_10_706">
+<path id="Vector_2" d="M439.857 774H242V881.005H439.857V774Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_0_1)">
+<g id="Group">
+<g id="Mask group">
+<mask id="mask1_0_1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="242" y="774" width="198" height="108">
+<g id="Group_2">
+<path id="Vector_3" d="M242 774H439.857V881.005H242V774Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask1_0_1)">
+<g id="Group_3">
+<path id="Vector_4" fill-rule="evenodd" clip-rule="evenodd" d="M340.835 774.245C286.265 774.245 242.029 798.073 242.029 827.469C242.029 856.865 291.432 880.693 340.835 880.693C390.239 880.693 439.642 856.865 439.642 827.469C439.642 798.073 395.406 774.245 340.835 774.245Z" fill="#F4D4CF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Layer4" clip-path="url(#clip1_0_1)">
+<path id="Vector_5" fill-rule="evenodd" clip-rule="evenodd" d="M341.279 838.615C289.204 838.615 237.129 821.135 234.647 799.25L204.314 662.364C203.643 660.557 203.229 658.719 203.091 656.859L203.007 656.458H203.066C203.049 656.13 203.041 655.797 203.041 655.469C203.041 626.073 264.927 602.245 341.27 602.245C417.613 602.245 479.5 626.073 479.5 655.469C479.5 657.932 479.016 660.359 478.083 662.734L447.967 798.63C446.408 820.802 393.844 838.615 341.279 838.615Z" fill="#FFD9CA"/>
+<g id="Clip path group_2">
+<mask id="mask2_0_1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="203" y="602" width="277" height="108">
+<g id="clip0_10_706_2">
+<path id="Vector_6" d="M479.799 602H203V709.005H479.799V602Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask2_0_1)">
+<g id="Group_4">
+<g id="Mask group_2">
+<mask id="mask3_0_1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="203" y="602" width="277" height="108">
+<g id="Group_5">
+<path id="Vector_7" d="M203 602H479.799V709.005H203V602Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask3_0_1)">
+<g id="Group_6">
+<path id="Vector_8" fill-rule="evenodd" clip-rule="evenodd" d="M341.27 602.245C264.927 602.245 203.04 626.073 203.04 655.469C203.04 684.865 272.155 708.693 341.27 708.693C410.385 708.693 479.499 684.865 479.499 655.469C479.499 626.073 417.613 602.245 341.27 602.245Z" fill="#E59677"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Layer3" clip-path="url(#clip2_0_1)">
+<path id="Vector_9" fill-rule="evenodd" clip-rule="evenodd" d="M341.202 661.615C271.079 661.615 200.957 644.135 197.615 622.25L156.77 485.364C155.865 483.557 155.308 481.719 155.123 479.859L155.009 479.458H155.089C155.066 479.13 155.054 478.797 155.054 478.469C155.054 449.073 238.389 425.245 341.19 425.245C443.992 425.245 527.326 449.073 527.326 478.469C527.326 480.932 526.675 483.359 525.418 485.734L484.866 621.63C482.766 643.802 411.984 661.615 341.202 661.615Z" fill="#FFB29A"/>
+<g id="Clip path group_3">
+<mask id="mask4_0_1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="155" y="425" width="373" height="108">
+<g id="clip0_10_706_3">
+<path id="Vector_10" d="M527.73 425H155V532.005H527.73V425Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask4_0_1)">
+<g id="Group_7">
+<g id="Mask group_3">
+<mask id="mask5_0_1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="155" y="425" width="373" height="108">
+<g id="Group_8">
+<path id="Vector_11" d="M155 425H527.73V532.005H155V425Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask5_0_1)">
+<g id="Group_9">
+<path id="Vector_12" fill-rule="evenodd" clip-rule="evenodd" d="M341.19 425.245C238.389 425.245 155.054 449.073 155.054 478.469C155.054 507.865 248.122 531.693 341.19 531.693C434.258 531.693 527.326 507.865 527.326 478.469C527.326 449.073 443.991 425.245 341.19 425.245Z" fill="#E55F35"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Layer2" clip-path="url(#clip3_0_1)">
+<path id="Vector_13" fill-rule="evenodd" clip-rule="evenodd" d="M341.59 485.615C245.337 485.615 149.083 468.135 144.495 446.25L88.4288 309.364C87.1873 307.557 86.422 305.719 86.1682 303.859L86.0121 303.458H86.1214C86.0901 303.13 86.0745 302.797 86.0745 302.469C86.0745 273.073 200.464 249.245 341.575 249.245C482.686 249.245 597.075 273.073 597.075 302.469C597.075 304.932 596.181 307.359 594.455 309.734L538.791 445.63C535.91 467.802 438.75 485.615 341.59 485.615Z" fill="#FF8B68"/>
+<g id="Clip path group_4">
+<mask id="mask6_0_1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="86" y="249" width="512" height="108">
+<g id="clip0_10_706_4">
+<path id="Vector_14" d="M597.629 249H86V356.005H597.629V249Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask6_0_1)">
+<g id="Group_10">
+<g id="Mask group_4">
+<mask id="mask7_0_1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="86" y="249" width="512" height="108">
+<g id="Group_11">
+<path id="Vector_15" d="M86 249H597.629V356.005H86V249Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask7_0_1)">
+<g id="Group_12">
+<path id="Vector_16" fill-rule="evenodd" clip-rule="evenodd" d="M341.574 249.245C200.464 249.245 86.0742 273.073 86.0742 302.469C86.0742 331.865 213.825 355.693 341.574 355.693C469.325 355.693 597.075 331.865 597.075 302.469C597.075 273.073 482.685 249.245 341.574 249.245Z" fill="#DD623D"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Layer1">
+<path id="Vector_17" fill-rule="evenodd" clip-rule="evenodd" d="M340.953 308.615C212.552 308.615 84.151 291.135 78.0313 269.25L3.23958 132.364C1.58333 130.557 0.5625 128.719 0.223958 126.859L0.015625 126.458H0.161458C0.119792 126.13 0.0989583 125.797 0.0989583 125.469C0.0989583 96.0729 152.693 72.2448 340.932 72.2448C529.172 72.2448 681.766 96.0729 681.766 125.469C681.766 127.932 680.573 130.359 678.271 132.734L604.016 268.63C600.172 290.802 470.563 308.615 340.953 308.615Z" fill="#FF6232"/>
+<g id="Clip path group_5">
+<mask id="mask8_0_1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="72" width="683" height="108">
+<g id="clip0_10_706_5">
+<path id="Vector_18" d="M682.505 72H0V179.005H682.505V72Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask8_0_1)">
+<g id="Group_13">
+<g id="Mask group_5">
+<mask id="mask9_0_1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="72" width="683" height="108">
+<g id="Group_14">
+<path id="Vector_19" d="M0 72H682.505V179.005H0V72Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask9_0_1)">
+<g id="Group_15">
+<path id="Vector_20" fill-rule="evenodd" clip-rule="evenodd" d="M340.932 72.2448C152.693 72.2448 0.098938 96.0729 0.098938 125.469C0.098938 154.865 170.516 178.693 340.932 178.693C511.349 178.693 681.766 154.865 681.766 125.469C681.766 96.0729 529.172 72.2448 340.932 72.2448Z" fill="#E2552A"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="198" height="237" fill="white" transform="translate(242 778)"/>
+</clipPath>
+<clipPath id="clip1_0_1">
+<rect width="277" height="237" fill="white" transform="translate(203 602)"/>
+</clipPath>
+<clipPath id="clip2_0_1">
+<rect width="373" height="237" fill="white" transform="translate(155 425)"/>
+</clipPath>
+<clipPath id="clip3_0_1">
+<rect width="512" height="237" fill="white" transform="translate(86 249)"/>
+</clipPath>
+</defs>
+</svg>
