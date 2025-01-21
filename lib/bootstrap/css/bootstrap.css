@@ -33,7 +33,7 @@
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: 'Public Sans', sans-serif; /* Use Public Sans for sans-serif */
   --font-family-monospace:'Public Sans', monospace; 
-  --font-family-serif: 'Public Sans', serif; /* Use Lora for serif */
+  --font-family-serif: 'Lora', serif; /* Use Lora for serif */
 }
 
 *,
