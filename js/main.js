@@ -136,6 +136,7 @@ jQuery(document).ready(function( $ ) {
 });
 
 // Add click functionality only to Layer1 through Layer6
+// Add click functionality only to Layer1 through Layer6
 const clickableLayers = ['Layer1', 'Layer2', 'Layer3', 'Layer4', 'Layer5', 'Layer6'];
 
 clickableLayers.forEach(layerId => {
@@ -168,30 +169,53 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//Add Modal functionality
 
 document.addEventListener("DOMContentLoaded", () => {
-  const hash = window.location.hash; // Get the hash from the URL
-  if (hash && hash.startsWith("#services-")) {
-    const elementId = hash.replace("#", ""); // Remove the hash symbol
-    const element = document.getElementById(elementId); // Find the target element
-    const modalId = `modal-${hash.split("#services-")[1]}`; // Construct the modal ID
-    const modalElement = document.getElementById(modalId); // Find the modal by ID
+  const handleHashNavigation = (hash) => {
+    if (hash && hash.startsWith("#modal-")) {
+      const modalElement = document.querySelector(hash); // Find the modal directly by hash
 
-    if (element) {
-      // Scroll the associated service block into view
-      element.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
+      // Find the associated card by matching the `data-target` attribute
+      const cardElement = document.querySelector(`[data-target="${hash}"]`);
 
-    if (modalElement) {
-      // Open the modal regardless of the user's position on the page
-      setTimeout(() => {
-        $(`#${modalId}`).modal('show'); // Open the modal
-      }, 500);
+      if (cardElement) {
+        // Scroll the card into view
+        cardElement.closest(".feature-block").scrollIntoView({ behavior: "smooth", block: "center" });
+
+        // Open the modal after scrolling
+        setTimeout(() => {
+          $(hash).modal("show");
+        }, 500); // Adjust delay as needed
+      } else {
+        console.warn(`No card found associated with modal ID "${hash}".`);
+      }
+    } else if (hash && hash.startsWith("#")) {
+      // Scroll to a specific section if it's not a modal
+      const targetSection = document.querySelector(hash);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        console.warn(`No section found with ID "${hash}".`);
+      }
     } else {
-      console.warn(`Modal with ID "${modalId}" not found. Check the hash structure and modal ID.`);
+      console.warn(`Invalid hash structure: "${hash}".`);
     }
-  } else {
-    console.warn(`Invalid hash structure: "${hash}". Expected format is "#services-{name}".`);
+  };
+
+  // Handle the initial hash in the URL on page load
+  const initialHash = window.location.hash;
+  if (initialHash) {
+    handleHashNavigation(initialHash);
   }
+
+  // Add event listener for header link clicks
+  const headerLinks = document.querySelectorAll("header a[href^='#']");
+  headerLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevent default anchor behavior
+      const targetHash = link.getAttribute("href");
+      handleHashNavigation(targetHash);
+    });
+  });
 });
+

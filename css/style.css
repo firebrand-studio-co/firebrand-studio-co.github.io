@@ -28,6 +28,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  font-family: serif;
 }
 
 h2 {
@@ -90,6 +91,11 @@ p {
   height: calc(100vh + 100px); /* Take up full viewport height minus header */
 }
 
+#iframeContainer {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
 .intro {
   flex-grow: 1;
   display: flex;
@@ -747,26 +753,30 @@ Get Started Section
   width: 100%;
   background: #fbf8ef
 }
-
+#get-started .row {
+  margin: 0px; /* Reset default row margins */
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center-align the grid items */  
+}
 #get-started .feature-block {
-  background: var(--clr-black-900) none repeat scroll 0 0;
-  padding: 30px 20px;
-  transition: all 0.5s ease-in-out 0s;
-  flex: 1 1 calc(25% - 30px); /* Allows responsive adjustment like the services section */
+  width: 100%;
+  height: 100%;
+  background: var(--clr-black-900);
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 15px; /* Space between blocks */
-  height: 300px; /* Ensures uniform height */
-  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
 }
 
 #get-started .feature-block img {
-  max-width: 100%;
-  height: auto;
+  max-width: auto;
+  height: 100%;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 #get-started .section-title h3 {
@@ -776,6 +786,8 @@ Get Started Section
 
 #get-started .feature-block h4 {
   margin-bottom: 10px;
+  font-family: serif;
+  font-size: 22px;
 }
 
 #get-started .feature-block p {
@@ -831,42 +843,53 @@ About Us Section
   overflow: hidden;
   display: flex;
   height: 100%;
-  width: 100%;
+  padding-right: 10px;
 }
 
 #about-us img {
-  max-width: 100%;
-  display: block;
-  margin-left:10px ;
+  height: 350px;
+  display: flex;
+  margin-left:-100px ;
+
 }
 
 #about-us .about-content {
-  padding-top: 20px;
-  margin-left: 30px;
+  padding: 20px;
+  margin-left: 0px;
 }
+
 
 #about-us .about-content h2 {
   color: #252525;
-  font-family: "roboto";
-  font-size: 39px;
+  font-size:1.8em;
   font-weight: 100;
   letter-spacing: 2px;
   margin-bottom: 20px;
   text-transform: capitalize;
+  font-family: serif;
+  text-transform: uppercase;
+  font-size: clamp(0.9em, 2.5vw, 4em); /* Responsive font size */
 }
 
 #about-us .about-content span {
-  font-weight: 700;
-  padding-right: 10px;
-  text-transform: uppercase;
+  font-weight: 600;
+  padding-right: 0;
 }
 
 #about-us .about-content ul li {
-  line-height: 36px;
+  display: block; /* Flexbox for alignment */
+  align-items: center; /* Align items vertically */
+  line-height: 1.5em; /* Adjust line height for readability */
+  font-size: clamp(0.2em, 1.5vw, 1em);
+  gap: 10px; /* Add space between icon and text */
 }
 
+#about-us .about-content p {
+  font-size: 18px;
+}
 #about-us .about-content ul li .fa {
-  padding-right: 20px;
+  padding-right: 10px;
+  color: #ff6333;
 }
 
 #about-us .container {
@@ -887,19 +910,25 @@ About Us Section
     justify-content: center; /* Center everything on medium screens */
   }
   #about-us .about-content {
-    margin-left: 0; /* Reset margin for better centering */
+    margin-left: -20px; /* Reset margin for better centering */
     text-align: left; /* Center align text for medium screens */
+    padding: 0;
   }
 
+  #about-us img {
+    height: 200px;
+  }
 }
 
-@media (max-width: 575px) { /* Small screens (mobile) */
+@media (max-width: 650px) { /* Small screens (mobile) */
   #about-us img {
     display: none; /* Hide image */
+    height: 200px;
   }
   #about-us .about-content {
     text-align: left; /* Center align text on small screens */
     padding-top: 10px; /* Reduce padding for smaller screens */
+    
   }
 }
 
@@ -1054,11 +1083,20 @@ About Us Section
 }
 
 #services .feature-block h4 {
-  margin: 15px;
-
+  margin: 10px;
+  font-family: serif !important;
+  padding: 5px;
 }
 
+services .section-title {
+  font-family: serif !important;
+}
+#services .section-title p {
+  text-transform: none !important;
 
+}
+/* Modal Section
+--------------------------------*/
 .modal {
   display: flex; /* Enable flexbox */
   align-items: center; /* Center vertically */
@@ -1284,7 +1322,7 @@ Styling for Tabs
 .tab-content {
   line-height: 1.2; /* Improve readability */
   background-color: var(--clr-black-900); /* Consistent background color */
-  padding-bottom: 50px; /* Standardize padding around content */
+  padding-bottom: 20px; /* Standardize padding around content */
   line-height: 1.2;
   padding-left: 40px;
   margin-top: 20px; /* Add spacing between tabs and content */
@@ -1460,7 +1498,7 @@ Contact Section
     padding: 0 0 10px 50px;
     margin-bottom: 20px;
     line-height: 22px;
-    font-size: 14px;
+    font-size: 18px;
   }
 
   #contact .info .email p {
@@ -1523,11 +1561,12 @@ Contact Section
   }
 
   #contact .form input, #contact .form textarea {
-    border-radius: 0;
+    border-radius: 5px;
     box-shadow: none;
     font-size: 14px;
     padding: 12px 10px;
     line-height: 1;
+    margin: 10px;
   }
 
   #contact .form button[type="submit"] {
