@@ -1,0 +1,829 @@
+/* =========================================================
+   Global Theme Colors
+   ========================================================= */
+
+   :root {
+    --color-primary: #ff6232;    /* Vibrant Orange */
+    --color-secondary: #FCFF55;  /* Bright Yellow */
+    --color-black: #333330;      /* Dark Grey/Black */
+    --color-white: #fffffa;      /* Off-White */
+    --color-accent: #1375DB;     /* Deep Blue */
+    --color-neutral: #fbf8ef;    /* Soft Beige */
+}
+
+
+/* =========================================================
+   Base Styles
+   ========================================================= */
+
+  
+/* Reset margins and paddings, set base font and text alignment */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* {
+  border: 1px solid red;
+}*/
+/* =========================================================
+   Header Styles
+   ========================================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--color-black);
+    color: var(--color-white);
+    position: fixed;
+    height: 100px;
+    display: block;
+    width: 100%;
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; /* Ensure vertical alignment */
+    width: 100%;
+    margin-top: 2em;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    justify-content: left;
+}
+
+.logo img{
+    max-height: 50px;
+    margin-left: -30px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+   
+}
+
+.nav-links a {
+    color: var(--color-white);
+    text-decoration: none; /* Remove underline */
+    font-size: 1.5em;
+}
+
+.cta {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.cta:hover {
+    background: var(--color-primary);
+}
+
+/* =========================================================
+   Hero Section
+   ========================================================= */
+
+  .hero h1 {
+    overflow:hidden;
+    vertical-align:center;
+    height:60vh;
+    justify-content:center;
+    align-content:center;
+    font-size:7em;
+    margin-bottom:0px;
+    padding-bottom: 0;
+  }
+  .hero {
+    height:90vh;
+    background:var(--color-white);
+    padding-top: 2em;
+    
+  }
+
+
+.hero p {
+    position: relative;
+    font-size: 2.5em;
+    margin-top: -10px;
+}
+
+ 
+.hero button {
+    margin-top: 2em;
+    width:25%;
+    height:55px;
+    font-size: 1em;
+    padding:0 6px;
+    border: 1px solid var(--color-black);
+    
+  }
+
+.primary-btn {
+    background: var(--color-secondary);
+    border: 1px solid var(--color-black);
+    padding: 20px 40px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.primary-btn:hover {
+    background: var(--color-primary);
+}
+
+/* =========================================================
+   Services Section
+   ========================================================= */
+
+.services {
+    padding: 40px 20px;
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.services h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.services p {
+    font-size: 1em;
+    margin-bottom: 0px;
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Minimum width for each icon */
+    gap: 5px;
+    font-size: 10px; /* Increase icon size to 4em */
+    justify-items: center;
+    position: relative; /* Required for tooltip positioning */
+}
+
+.icons .icon {
+    transition: color 0.3s ease;
+    position: relative; /* Needed for tooltip */
+    cursor: pointer;
+    height: 100px; /* Ensure icons are at least 150px tall */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Remove underline */
+    padding:30px 0px;
+    
+}
+
+.icons img {
+    height: 200px; 
+    display: flex;
+    width: auto;
+    
+} 
+
+.icons .icon:hover {
+    color: var(--color-white);
+}
+
+/* Tooltip Styles */
+.icons .icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 10%; /* Position above the icon */
+    left: 0%;
+    transform: translateX(-5px);
+    margin: 0 auto;
+    background-color:var(--color-white);
+    color: var(--color-black);
+    padding: 10px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+    font-size: 2.2em; /* Increase tooltip text size to 2em */
+    z-index: 10;
+    justify-content: left;
+    width: auto;
+    
+
+    
+}
+
+.icons .icon:hover::after {
+    opacity: .85;
+    bottom: -10%; /* Slightly higher on hover */
+}
+
+@media (max-width: 800px)  {
+    .services {
+        margin-bottom:0px ;
+    }
+    
+}
+
+
+/* =========================================================
+   Features Section (Desktop First)
+   ========================================================= */
+
+   .features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    padding: 20px 20px;
+    width: 100%;
+    justify-content: center;
+    background-image: url('/src/images/background-1.png');
+    margin-top: 20px;
+    /* Ensure the background image does not stretch */
+    background-size: contain; /* Adjusts the image to fit without stretching */
+    background-position: center; /* Centers the image */
+    background-repeat: repeat; /* Prevents tiling */
+}
+
+
+/* Feature Container (Image + Card) */
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Alternate Layout: Image Left / Right */
+.feature:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.features h2 {
+    font-size: 2.5em;
+    margin-bottom: 0px;;
+}
+/* Feature Images (Take 40% of Screen Width) */
+.feature img {
+    width:40%;
+    max-width: 850px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    flex-shrink: 0;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+/* Feature Card (Takes 35% of Screen Width) */
+.feature-card {
+    background: var(--color-primary); /* Primary brand color (orange) */
+    padding: 20px;
+    border-radius: 16px;
+    width: 40%;
+    box-shadow: 5px 5px 0px var(--color-black);
+    color: var(--color-white);
+    text-align: left;
+    position: relative;
+}
+
+/* Feature Titles */
+.feature-card h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 10px 10px 20px 10px;
+}
+
+/* =========================================================
+   Checklist Items
+   ========================================================= */
+
+.checklist-item {
+    background: var(--color-white);
+    padding: 12px 12px 12px 45px; /* Extra left padding to align text properly */
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: var(--color-black);
+    position: relative;
+}
+
+/* Checkmark Box - Overlaps the left side but stays inside the off-white background */
+.checkmark {
+    width: 24px;
+    height: 24px;
+    background: var(--color-secondary); /* Bright Yellow */
+    border: 1px solid var(--color-black); /* Hard black border */
+    box-shadow: 2px 2px 0px var(--color-black);
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: normal;
+    position: absolute;
+    left: 5px; /* Adjusted to keep inside */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* The checkmark itself should overflow */
+.checkmark::after {
+    content: "✓";
+    color: var(--color-black);
+    font-size: 40px; /* Make checkmark larger */
+    font-weight: lighter;
+    position: absolute;
+    top: -15px; /* Moves it up to extend beyond the box */
+    right: -10px; /* Moves it right to overflow */
+    overflow: visible;
+}
+
+/* =========================================================
+   Mobile Styling
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .features {
+        padding: 0px;
+        gap: 40px; /* Reduce gap for a tighter layout */
+    }
+
+    .feature {
+        flex-direction: column !important;
+        width:80%;
+        margin: 0px;
+        gap: 20px;
+    }
+
+    .feature h2 {
+        font-size: 1.8em;
+    }
+    /* Hide images on mobile */
+    .feature img {
+        display: none;
+    }
+
+    /* Full-width feature cards on mobile */
+    .feature-card {
+        width: 100%;
+    }
+
+    /* Adjust checklist styling for smaller screens */
+    .checklist-item {
+        padding: 10px 10px 10px 40px; /* Adjust padding for mobile */
+    }
+
+    .checkmark {
+        width: 22px;
+        height: 22px;
+        font-size: 20px;
+        left: 3px; /* Adjust left position slightly */
+    }
+
+    .checkmark::after {
+        font-size: 36px; /* Slightly smaller checkmark on mobile */
+        top: -12px;
+        right: -8px;
+    }
+}
+
+
+.secondary-btn {
+    background: var(--color-black);
+    color: var(--color-white);;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 35%;
+    transition: background 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: #333;
+}
+
+/* =========================================================
+   Newsletter Section
+   ========================================================= */
+
+.newsletter {
+    background: var(--color-accent);
+    margin: 0px ;
+    height: auto;
+    text-align: left;
+    flex-direction: column;  /* Stack elements vertically */
+    font-size:.35em;
+    border-radius: 20px;
+    margin: 0;
+    width: 100%;
+}
+
+.newsletter h3   {
+    padding: 20px 0px 0px 20px;
+}
+
+.newsletter p   {
+    padding: 10px 5px 0px 20px;
+}
+
+.newsletter button {
+    margin: 20px;
+    padding: 20px;
+}
+.newsletter-container {
+    margin: 5%;
+    width: 90%;
+    background-image: url('/src/images/background-1.png');
+    /* Ensure the background image does not stretch */
+    background-size: contain; /* Adjusts the image to fit without stretching */
+    background-repeat: no-repeat; /* Prevents tiling */
+}
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+
+    .newsletter-container {
+        margin: 0;
+        margin-top: 40px;
+        width: 100%;
+        background: var(--color-accent);
+        justify-content: center;
+        align-content: center;
+    }
+    .newsletter {
+        align-content: center;
+        margin: 20px 0px 0px !important;
+        height: auto;
+        border-radius: 0px;
+        text-align: center;
+        width: 100%;
+        flex-direction: column;  /* Stack elements vertically */
+        font-size: 2.5em;
+        justify-content: center;
+        padding: 0px 0px 0px 0px
+          }
+
+    .newsletter h3 {
+        width: 100%;  /* Makes sure it takes full width */
+        padding: 0px 20px 0px 0px;
+    }
+
+    
+
+    .newsletter p {
+        width: 100%;  /* Ensures it takes full width */
+        padding: 0px 5px 20px 0px;
+        font-size: .5em;
+    }
+
+    .newsletter button {
+        margin: 0px;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+}
+
+
+
+/* =========================================================
+   Footer Styles
+   ========================================================= */
+
+footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-left {
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0;
+    background-color: #222;
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.footer-text {
+    margin: 10px 0;
+    font-size: 14px;
+    max-width: 300px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    color: var(--color-black);
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #aaa;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+copyright {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #aaa;
+}
+
+/* =========================================================
+   Rotating Word Animation
+   ========================================================= */
+
+
+
+   .words-wrapper .words {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    width: var(--width);
+    border-radius: 6px;
+    color: var(--color, var(--color-white));
+    background: var(--color-bg, var(--color-primary));
+    box-sizing: content-box;
+    transition: all 0.8s;
+    padding: 0;
+    height: 25%;
+  }
+  
+  .words-wrapper .words span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    transition: transform 0.9s, opacity 0.15s 0.15s;
+    padding: 0 10px;
+    justify-content: center;
+  }
+  
+  .words-wrapper .words span.current {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  
+  .words-wrapper .words span.next {
+    transform: translate(-50%, 100%);
+  }
+  
+
+
+
+@media (max-width: 800px) {
+  .words-wrapper .words {
+    width: var(--width);
+   
+   }
+  
+  .words-wrapper .words span {
+    padding-left:10px;
+    padding-right:10px;
+    padding-top: 10px;
+  }
+  
+
+  .hero p{
+    font-size: 2em;
+  }
+  .hero h1{
+    font-size: 5em;
+    height: 50vh;
+  }
+  
+  .hero button {
+    margin-top: 3em;
+    width:55%;
+    height:55px;
+    font-size: 1em;
+    padding:0 6px;
+    border: 1px solid var(--color-black);
+    
+  }
+
+  .words-wrapper {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+      
+  }
+}
+
+@keyframes rotateWords {
+    0% { transform: translateY(0); opacity: 1; }
+    20% { opacity: 1; }
+    25% { transform: translateY(-100%); opacity: 0; }
+    95% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* =========================================================
+   Mobile Styles
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    header{
+    height: 70px;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Ensure vertical alignment */
+        width: 90%;
+        margin: 1em 0;
+        padding-left: 10px;
+    }
+
+    .menu-toggle {
+        font-size: 3em;
+    }
+    /* Navigation Toggle */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--color-black);
+        position: absolute;
+        top: 80px; /* Adjust based on header height */
+        right: 40;
+        z-index: 1000; /* Ensure it overlays other content */
+        width: 100vw;
+        padding: 10px;
+        opacity: .9;
+        
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 2em;
+    }
+
+    
+
+    /* Footer Adjustments */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    .footer-left,
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-nav {
+        justify-content: center;
+    }
+
+    .footer-links {
+        text-align: center;
+    }
+
+    /* Services Icons Adjustments */
+    .icons {
+        grid-template-columns: repeat(3, 1fr); /* Max 3 icons per row */
+        padding: 1em;
+    }
+
+
+    /* Increase tooltip text size on mobile */
+    .icons .icon::after {
+        font-size: 2em;
+    }
+    
+}
+
+/* =========================================================
+   Desktop Styles
+   ========================================================= */
+@media (min-width: 769px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .social-icons {
+        justify-content: flex-end;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+
+    .copyright {
+        align-self: flex-end;
+    }
+}

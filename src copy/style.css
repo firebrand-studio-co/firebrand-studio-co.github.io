@@ -1,0 +1,677 @@
+/* =========================================================
+   Base Styles
+   ========================================================= */
+
+:root {
+    --color-primary: #ff6232;
+    --color-secondary: #FCFF55;
+    --color-black: #333330;
+    --color-white: #fffffa;
+    --color-accent: #508BED;
+    --color-neutral: #fbf8ef;
+  }
+  
+/* Reset margins and paddings, set base font and text alignment */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* {
+  border: 1px solid red;
+}*/
+/* =========================================================
+   Header Styles
+   ========================================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--color-black);
+    color: var(--color-white);
+    position: fixed;
+    height: 100px;
+    display: block;
+    width: 100%;
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; /* Ensure vertical alignment */
+    width: 100%;
+    margin-top: 2em;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+   
+}
+
+.nav-links a {
+    color: var(--color-white);
+    text-decoration: none; /* Remove underline */
+    font-size: 1.5em;
+}
+
+.cta {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.cta:hover {
+    background: var(--color-primary);
+}
+
+/* =========================================================
+   Hero Section
+   ========================================================= */
+
+  .hero h1 {
+    overflow:hidden;
+    vertical-align:center;
+    height:60vh;
+    justify-content:center;
+    align-content:center;
+    font-size:7em;
+    margin-bottom:0px;
+    padding-bottom: 0;
+  }
+  .hero {
+    height:90vh;
+    background:var(--color-white);
+    padding-top: 2em;
+    
+  }
+
+
+.hero p {
+    position: relative;
+    font-size: 2.5em;
+    margin-top: -10px;
+}
+
+ 
+.hero button {
+    margin-top: 2em;
+    width:25%;
+    height:55px;
+    font-size: 1em;
+    padding:0 6px;
+    border: 1px solid var(--color-black);
+    
+  }
+
+.primary-btn {
+    background: var(--color-secondary);
+    border: 1px solid var(--color-black);
+    padding: 20px 40px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.primary-btn:hover {
+    background: var(--color-primary);
+}
+
+/* =========================================================
+   Services Section
+   ========================================================= */
+
+.services {
+    padding: 40px 20px;
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.services h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.services p {
+    font-size: 1em;
+    margin-bottom: 30px;
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Minimum width for each icon */
+    gap: 5px;
+    font-size: 10px; /* Increase icon size to 4em */
+    justify-items: center;
+    position: relative; /* Required for tooltip positioning */
+}
+
+.icons .icon {
+    transition: color 0.3s ease;
+    position: relative; /* Needed for tooltip */
+    cursor: pointer;
+    height: 100px; /* Ensure icons are at least 150px tall */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Remove underline */
+    padding:30px 0px;
+    
+}
+
+.icons img {
+    height: 200px; 
+    display: flex;
+    width: auto;
+    
+} 
+
+.icons .icon:hover {
+    color: var(--color-white);
+}
+
+/* Tooltip Styles */
+.icons .icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 10%; /* Position above the icon */
+    left: 0%;
+    transform: translateX(-5px);
+    margin: 0 auto;
+    background-color:var(--color-white);
+    color: var(--color-black);
+    padding: 10px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+    font-size: 2.2em; /* Increase tooltip text size to 2em */
+    z-index: 10;
+    justify-content: left;
+    width: auto;
+    
+
+    
+}
+
+.icons .icon:hover::after {
+    opacity: .85;
+    bottom: -10%; /* Slightly higher on hover */
+}
+
+
+
+/* =========================================================
+   Features Section
+   ========================================================= */
+
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 900px;
+    text-align: left;
+    position: relative; /* For positioning context */
+    overflow: hidden; /* Clip overflowing parts */
+    background: var(--color-white); /* Optional: add background for contrast */
+    border-radius: 10px; /* Optional: add border radius */
+    /* box-shadow: 0 4px 6px rgba(0,0,0,0.1); */ /* Optional: add shadow */
+}
+
+.feature img {
+    width: 40%; /* Fixed width for square */
+    height: auto; /* Fixed height for square */
+    object-fit: contain; /* Cover the container without distortion */
+    border-radius: 20px;
+    flex-shrink: 0; /* Prevent shrinking */
+    margin-bottom: 0px;
+    justify-content: left;
+}
+
+.feature:nth-child(2) {
+    flex-direction: row-reverse; /* Alternate layout for variety */
+}
+
+.feature-content {
+    flex: 1;
+    padding: 0 80px; /* Space between image and content */
+}
+
+.feature-content h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-content p {
+    font-size: 1em;
+    color: var(--color-black);
+    margin: 15px 0;
+}
+
+.secondary-btn {
+    background: var(--color-black);
+    color: var(--color-white);;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 35%;
+    transition: background 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: #333;
+}
+
+/* =========================================================
+   Newsletter Section
+   ========================================================= */
+
+.newsletter {
+
+    background: #b3b3b3;
+    margin: 0px;
+    height:auto;
+    border-radius: 5px;
+    text-align: center;
+    padding: 40px 0px;
+    width:100%
+
+}
+
+
+
+/* =========================================================
+   Footer Styles
+   ========================================================= */
+
+footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-left {
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0;
+    background-color: #222;
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.footer-text {
+    margin: 10px 0;
+    font-size: 14px;
+    max-width: 300px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    color: var(--color-black);
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #aaa;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+copyright {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #aaa;
+}
+
+/* =========================================================
+   Rotating Word Animation
+   ========================================================= */
+
+
+
+   .words-wrapper .words {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    width: var(--width);
+    border-radius: 6px;
+    color: var(--color, var(--color-white));
+    background: var(--color-bg, var(--color-primary));
+    box-sizing: content-box;
+    transition: all 0.8s;
+    padding: 0;
+    height: 25%;
+  }
+  
+  .words-wrapper .words span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    transition: transform 0.9s, opacity 0.15s 0.15s;
+    padding: 0 10px;
+    justify-content: center;
+  }
+  
+  .words-wrapper .words span.current {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  
+  .words-wrapper .words span.next {
+    transform: translate(-50%, 100%);
+  }
+  
+
+
+
+@media (max-width: 800px) {
+  .words-wrapper .words {
+    width: var(--width);
+   
+   }
+  
+  .words-wrapper .words span {
+    padding-left:10px;
+    padding-right:10px;
+    padding-top: 10px;
+  }
+  
+
+  .hero p{
+    font-size: 2em;
+  }
+  .hero h1{
+    font-size: 5em;
+    height: 50vh;
+  }
+  
+  .hero button {
+    margin-top: 3em;
+    width:55%;
+    height:55px;
+    font-size: 1em;
+    padding:0 6px;
+    border: 1px solid var(--color-black);
+    
+  }
+
+  .words-wrapper {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+      
+  }
+}
+
+@keyframes rotateWords {
+    0% { transform: translateY(0); opacity: 1; }
+    20% { opacity: 1; }
+    25% { transform: translateY(-100%); opacity: 0; }
+    95% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* =========================================================
+   Mobile Styles
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    header{
+    height: 70px;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Ensure vertical alignment */
+        width: 90%;
+        margin: 1em 0;
+        padding-left: 10px;
+    }
+
+    .menu-toggle {
+        font-size: 3em;
+    }
+    /* Navigation Toggle */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--color-black);
+        position: absolute;
+        top: 80px; /* Adjust based on header height */
+        right: 40;
+        z-index: 1000; /* Ensure it overlays other content */
+        width: 100vw;
+        padding: 10px;
+        opacity: .9;
+        
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 2em;
+    }
+
+    /* Features Section Adjustments */
+    .features {
+        padding: 10px; /* Ensure consistent padding */
+    }
+
+    .feature {
+        flex-direction: column !important; /* Override any row or row-reverse */
+        text-align: left;
+        width: 90%;
+        margin: 20px;
+        background: var(--color-white); /* Maintain background */
+        border-radius: 10px; /* Maintain border radius */
+        /* box-shadow: 0 4px 6px rgba(0,0,0,0.1); */ /* Maintain shadow */
+    }
+
+    .feature img {
+        width: 100%;
+        height: auto; /* Adjust height based on aspect ratio */
+        aspect-ratio: 1/.5; /* Landscape aspect ratio for mobiles */
+        object-fit: contain; /* Ensure full coverage */
+        border-radius: 3px; /* Reduced radius for mobile */
+        display:flex ;
+        justify-content: left ;
+        margin-bottom: 1em;
+       
+    }
+
+    .feature-content {
+        margin: 20px 0;
+        padding: 0; /* Remove horizontal padding */
+    }
+
+    .secondary-btn {
+        width: 50%; /* Adjust button width for mobile */
+        margin: 1em 0;
+    }
+
+    /* Specifically target the second feature to ensure flex-direction is column */
+    .features .feature:nth-child(2) {
+        flex-direction: column !important;
+    }
+
+    /* Footer Adjustments */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-nav {
+        justify-content: center;
+    }
+
+    .footer-links {
+        text-align: center;
+    }
+
+    /* Services Icons Adjustments */
+    .icons {
+        grid-template-columns: repeat(3, 1fr); /* Max 3 icons per row */
+        padding: 1em;
+    }
+
+
+    /* Increase tooltip text size on mobile */
+    .icons .icon::after {
+        font-size: 2em;
+    }
+    
+}
+
+/* =========================================================
+   Desktop Styles
+   ========================================================= */
+@media (min-width: 769px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .social-icons {
+        justify-content: flex-end;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+
+    .copyright {
+        align-self: flex-end;
+    }
+}
