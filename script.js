@@ -47,3 +47,4 @@ setInterval(() => {
   wrapper.style.setProperty("--color-bg", colors[colorIndex].bg);
   wrapper.style.setProperty("--width", `${nextWord.offsetWidth}px`);
 }, 1500);
+

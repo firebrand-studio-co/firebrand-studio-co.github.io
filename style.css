@@ -268,12 +268,12 @@ header {
     padding: 20px 20px;
     width: 100%;
     justify-content: center;
-    background-image: url('/src/images/background-1.png');
+    background-image: radial-gradient(closest-side, rgba(255, 255, 255, .94), rgba(255, 255, 255, .94), rgba(255, 255, 255, 1)), url('/images/grid.svg');
+	background-repeat: no-repeat, repeat;
+	background-size: auto, 75px 44px;
     margin-top: 0px;
     /* Ensure the background image does not stretch */
-    background-size: contain; /* Adjusts the image to fit without stretching */
-    background-position: center; /* Centers the image */
-    background-repeat: repeat; /* Prevents tiling */
+   
     border-bottom: 2px solid #f0ecec;
 }
 
@@ -855,3 +855,4 @@ copyright {
         align-self: flex-end;
     }
 }
+
