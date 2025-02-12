@@ -28,7 +28,7 @@ body {
     background-color:var(--color-neutral)
 }
 
-/* {
+ /* {
   border: 1px solid red;
 }*/
 /* =========================================================
@@ -126,8 +126,10 @@ header {
     padding-bottom: 0;
   }
   .hero {
-    height:100vh;
-    background:var(--color-white);
+    height:120%;
+    background: #f2f2f2; /* Fallback for old browsers */
+    background: radial-gradient(circle, #fffffa 60%, #f2f2f2 80%, #8e8e8e 110%);
+
     padding-top: 2em;
     
   }
@@ -149,6 +151,7 @@ header {
     border: 1px solid var(--color-black);
     margin-bottom: 2em;
     box-shadow: 5px 5px 0px var(--color-black);
+    
   }
 
 .primary-btn {
@@ -174,11 +177,13 @@ header {
     padding: 40px 20px;
     background: var(--color-black);
     color: var(--color-white);
+    margin-top: 0em;
 }
 
 .services h2 {
     font-size: 2em;
     margin-bottom: 10px;
+  
 }
 
 .services p {
@@ -715,6 +720,8 @@ copyright {
     font-size: 1em;
     padding:0 6px;
     border: 1px solid var(--color-black);
+    margin-bottom: 5em;
+    clear: both;
     
   }
 
