@@ -129,7 +129,9 @@ header {
     height:120%;
     background: #f2f2f2; /* Fallback for old browsers */
     background: radial-gradient(circle, #fffffa 60%, #f2f2f2 80%, #8e8e8e 110%);
-
+    background-image: radial-gradient(closest-side, rgba(255, 255, 255, .94), rgba(255, 255, 255, .94), rgba(255, 255, 255, 1)), url('/images/grid.svg');
+	background-repeat: no-repeat, repeat;
+	background-size: auto, 75px 44px;
     padding-top: 2em;
     
   }
@@ -138,7 +140,7 @@ header {
 .hero p {
     position: relative;
     font-size: 2.5em;
-    margin-top: -10px;
+    margin-top: -2em;
 }
 
  
@@ -707,6 +709,9 @@ copyright {
 
   .hero p{
     font-size: 2em;
+    margin-top: 1em;
+    margin-bottom: 0em;
+    padding: .5em;
   }
   .hero h1{
     font-size: 5em;
@@ -720,7 +725,7 @@ copyright {
     font-size: 1em;
     padding:0 6px;
     border: 1px solid var(--color-black);
-    margin-bottom: 5em;
+    margin-bottom:0em;
     clear: both;
     
   }
