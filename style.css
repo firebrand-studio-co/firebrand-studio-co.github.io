@@ -31,10 +31,8 @@ body {
     
 }
 
-section {
-    padding: 0 0px;;
-}
-/* =========================================================
+
+/* ==================================================c=======
    Header and Nav Styles
 ========================================================= */
 
@@ -313,7 +311,6 @@ header {
     justify-content: center;
     gap: 1em; /* Spacing between image and card */
     width: 90%;
-    padding: 2em 4em;
 }
 
 .feature:nth-child(even) {
@@ -373,6 +370,7 @@ header {
     .menu-toggle {
         display: block;
         font-size: 3em;
+        padding: 0;
     }
 
     .nav-links {
@@ -449,9 +447,10 @@ header {
 
     .feature, .feature:nth-child(even) {
         flex-direction: column;
-        width: 90%;
+        width: 100%;
         margin: 0;
         gap: 20px;
+        padding: 0px;
     }
 
     .feature img {
