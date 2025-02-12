@@ -162,7 +162,7 @@ header {
     display: flex; /* Enable Flexbox */
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly; /* Center content vertically */
+    justify-content: space-around; /* Center content vertically */
     padding-top: var(--header-height); /* Offset for fixed header */
     padding-bottom: var(--spacing-large); /* Adds breathing space at bottom */
     height: calc(100vh - var(--header-height)); /* Dynamic height */
@@ -181,13 +181,12 @@ header {
     font-size: 7em; /* Increased font size */
     margin: 0em 0 var(--spacing-small) 0; /* Top and bottom margins */
     text-align: center;
-    padding: .5em 0em 1em 0em;
     overflow: hidden;
     /* Removed fixed height */
 }
 
 .hero p {
-    font-size: 2em; /* Increased font size */
+    font-size: 3em; /* Increased font size */
     padding: 0 20px; /* Horizontal padding */
     text-align: center;
     margin-top: -1em;
@@ -196,14 +195,14 @@ header {
 
 .hero button {
     margin-top: var(--spacing-small); /* Adjusted top margin */
-    width: 40%; /* Reduced width from 55% to 40% */
-    font-size: 1em;
+    width: 60%; /* Reduced width from 55% to 40% */
+    font-size: 1.5em;
     padding: 0.75em 1.5em; /* Increased padding for better touch targets */
     border: 1px solid var(--color-black);
     box-shadow: 5px 5px 0 var(--color-black);
     cursor: pointer;
     /* Removed fixed height */
-    margin-bottom: var(--spacing-extra-large);
+    margin-bottom: 0;
 }
 
 /* =========================================================
@@ -213,12 +212,14 @@ header {
     padding: 0;
     background: var(--color-black);
     color: var(--color-white);
-    margin-top: 0;
+    margin-top: 0px;
     max-width: 100%;
+    overflow: hidden;
 }
 
 .services h2 {
     font-size: 2em;
+    margin-top: 0px !important;
     margin-bottom: 10px;
 }
 
@@ -397,36 +398,39 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
         padding-top: var(--header-height); /* Prevents overlap with header */
-        padding-bottom: var(--spacing-small); /* Maintains breathing space */
+        padding-bottom: var(--spacing-extra-large); /* Maintains breathing space */
         height: calc(100vh - var(--header-height)); /* Dynamic height */
         width: 100%;
         object-fit:contain;
+        min-height: 700px;
 
         
     }
 
     .hero h1 {
-        font-size: 4em;
+        font-size:5em;
         /* Remove or reduce horizontal margins */
-        margin: 0 0; 
-        overflow: hidden;
+        padding: 0.5em 0em; 
+        overflow: visible;
+        
+        
       }
 
     .hero p {
-        font-size: 1.5em; /* Ensure readability */
-        padding: 0.5em; /* Adjusted padding */
+        font-size: 1.8em; /* Ensure readability */
+        padding: .5em; /* Adjusted padding */
         margin-top: -2em;
-        object-fit:contain;
     }
 
     .hero button {
-        width: 40%; /* Made less wide */
+        width: 90%; /* Made less wide */
         padding: 0.75em 1.5em; /* Increased padding */
-        font-size: 1em;
-        margin-top: 4em; /* Adjusted top margin */
+        font-size: 1.5em;
+        margin-top: 0; /* Adjusted top margin */
         box-shadow: 5px 5px 0 var(--color-black);
+
         /* Removed fixed height */
     }
 
@@ -465,20 +469,28 @@ header {
 /* Additional Media Query for Screens Below 500px */
 @media (max-width: 500px) {
     .hero h1 {
-        font-size: 4em; /* Adjusted font size for very small screens */
-        margin-top: -.25em;
-        overflow: hidden;
+        font-size: 4.5em; /* Adjusted font size for very small screens */
+        margin-top: 0;
+        overflow: visible;
+        margin: 0;
+        padding: 10px;
     }
 
     
 
     .hero p {
-        font-size: 1.2em; /* Adjusted font size */
+        font-size: 2em; /* Adjusted font size */
+        padding: 0px;
+        margin: 0;
+        margin-top: -4em;
     }
 
     .hero button {
-        width: 60%; /* Slightly wider but still less than original */
+        width: 90%; /* Slightly wider but still less than original */
         padding: 0.75em 1.2em; /* Adjusted padding */
+        margin: 0;
+        margin-top: -4em;
+
     }
 
     .words-wrapper .words {
@@ -496,7 +508,12 @@ header {
         font-size: 3.5em; /* Adjusted font size for very small screens */
         margin-top: -.25em;
         overflow: hidden;
-    }}
+    }
+    .hero p {
+        font-size: 1.5em;
+        padding: 2px;
+    }
+}
 
 /* =========================================================
    Tablet Styles
