@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
               entry.target.classList.remove("visible"); // Remove if it leaves viewport (optional)
           }
       });
-  }, { threshold: 1 }); // Adjust threshold (0.5 = 50% in view)
+  }, { threshold: .9 }); // Adjust threshold (0.5 = 50% in view)
 
   checkmarks.forEach(checkmark => {
       observer.observe(checkmark);
