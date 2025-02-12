@@ -464,8 +464,7 @@ header {
         flex-direction: column;
         width: 100%;
         margin: 0;
-        gap: 20px;
-        padding: 0px;
+        padding: 0;
     }
 
     .feature img {
