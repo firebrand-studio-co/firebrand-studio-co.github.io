@@ -48,3 +48,38 @@ setInterval(() => {
   wrapper.style.setProperty("--width", `${nextWord.offsetWidth}px`);
 }, 1500);
 
+document.addEventListener("DOMContentLoaded", function () {
+  const checkmarks = document.querySelectorAll(".checkmark");
+
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add("visible"); // Add class when visible
+          } else {
+              entry.target.classList.remove("visible"); // Remove if it leaves viewport (optional)
+          }
+      });
+  }, { threshold: 1 }); // Adjust threshold (0.5 = 50% in view)
+
+  checkmarks.forEach(checkmark => {
+      observer.observe(checkmark);
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const fadeItems = document.querySelectorAll(".fade-up");
+
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // Stop observing once it's visible
+          }
+      });
+  }, { threshold: 0.15 }); // Adjust visibility threshold
+
+  fadeItems.forEach(item => {
+      observer.observe(item);
+  });
+});

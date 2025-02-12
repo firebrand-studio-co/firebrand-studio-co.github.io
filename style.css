@@ -9,6 +9,7 @@
     --color-white: #fffffa;      /* Off-White */
     --color-accent: #1375DB;     /* Deep Blue */
     --color-neutral: #fbf8ef;    /* Soft Beige */
+    
 }
 
 
@@ -345,6 +346,7 @@ header {
 
 /* Checkmark Box - Overlaps the left side but stays inside the off-white background */
 .checkmark {
+    
     width: 24px;
     height: 24px;
     background: var(--color-secondary); /* Bright Yellow */
@@ -360,17 +362,26 @@ header {
     transform: translateY(-50%);
 }
 
-/* The checkmark itself should overflow */
+/* Hide checkmark by default */
 .checkmark::after {
     content: "✓";
     color: var(--color-black);
-    font-size: 40px; /* Make checkmark larger */
+    font-size: 40px; /* Large checkmark */
     font-weight: lighter;
     position: absolute;
-    top: -15px; /* Moves it up to extend beyond the box */
-    right: -10px; /* Moves it right to overflow */
-    overflow: visible;
+    top: -15px; 
+    right: -10px;
+    opacity: 0; /* Hide initially */
+    transform: scale(0.5); /* Shrink effect */
+    transition: opacity 0.5s ease, transform 0.3s ease;
 }
+
+/* Show checkmark when in viewport */
+.checkmark.visible::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
 
 /* =========================================================
    Mobile Styling
@@ -856,3 +867,15 @@ copyright {
     }
 }
 
+/* Initial state: Hidden and moved down */
+.fade-up {
+    opacity: 0;
+    transform: translateY(80px); /* Move down 30px */
+    transition: opacity 0.6s ease-out, transform 0.7s ease-out;
+}
+
+/* When in viewport, fade in and move up */
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0); /* Move to normal position */
+}
