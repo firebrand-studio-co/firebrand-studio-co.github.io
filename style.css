@@ -294,8 +294,8 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 2em;
-    padding: 20px 20px;
+    gap: 1em;
+    padding: 20px 70px;
     background: radial-gradient(closest-side, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 1)),
                 url('/images/grid.svg');
     background-repeat: no-repeat, repeat;
@@ -327,12 +327,13 @@ header {
 }
 
 .feature img {
-    width: 40%;
-    height: auto;
+    width: auto;
+    max-width: 600px;
+    height: 100%;
     border-radius: 10px;
     flex-shrink:1;
     margin: 0 0;
-    padding: 0em 2em 0em 2em;
+    padding: 0em 1em 0em 1em;
 }
 
 .feature-card {
@@ -456,7 +457,7 @@ header {
 
     /* Features Section Adjustments */
     .features {
-        gap: 2em; /* Reduced gap for tighter layout */
+        gap: 4em; /* Reduced gap for tighter layout */
     }
 
     .feature, .feature:nth-child(even) {
@@ -538,9 +539,16 @@ header {
         flex-direction: row-reverse;
     }
 
-
+    .features {
+        gap: 4em;
+    }
 
     .feature-card {
+        width: 60%;
+    }
+
+    .feature img {
+        padding: 0em; /* Ensure feature images are hidden on mobile */
         width: 50%;
     }
 }
