@@ -315,7 +315,7 @@ header {
     display: flex;
     align-items: center; /* Center align items vertically */
     justify-content: center;
-    gap: 1em; /* Spacing between image and card */
+    gap: 5em; /* Spacing between image and card */
     width: 100%;
     padding-left:1em;
     padding-right:1em;
