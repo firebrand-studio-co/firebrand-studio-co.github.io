@@ -174,6 +174,7 @@ header {
     background-size: auto, 75px 44px;
     position: relative;
     left: 0;
+    min-height:600px;
     
 }
 
@@ -209,7 +210,7 @@ header {
    Services Section
 ========================================================= */
 .services {
-    padding: 0;
+    padding: 20px 20px 0px 20px;
     background: var(--color-black);
     color: var(--color-white);
     margin-top: 0px;
@@ -221,6 +222,7 @@ header {
     font-size: 2em;
     margin-top: 0px !important;
     margin-bottom: 10px;
+    padding-top: 20px;
 }
 
 .services p {
@@ -290,6 +292,8 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 2em;
     padding: 20px 20px;
     background: radial-gradient(closest-side, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 1)),
@@ -298,12 +302,13 @@ header {
     background-size: auto, 75px 44px;
     margin-top: 0;
     border-bottom: 2px solid #f0ecec;
-    max-width: 100%;
+    max-width: 90%;
 }
 
 .features h2 {
     font-size: 2.5em;
     margin-bottom: 0;
+    
 }
 
 .feature {
@@ -311,7 +316,10 @@ header {
     align-items: center; /* Center align items vertically */
     justify-content: center;
     gap: 1em; /* Spacing between image and card */
-    width: 90%;
+    width: 100%;
+    padding-left:1em;
+    padding-right:1em;
+
 }
 
 .feature:nth-child(even) {
@@ -319,32 +327,34 @@ header {
 }
 
 .feature img {
-    width: 60%;
-    max-width: 600px; /* Increased max-width to 600px */
+    width: 40%;
     height: auto;
     border-radius: 10px;
-    flex-shrink: 1;
+    flex-shrink:1;
     margin: 0 0;
-    padding: 0em 2em;
+    padding: 0em 2em 0em 2em;
 }
 
 .feature-card {
     background: var(--color-primary);
     padding: 10px;
     border-radius: 16px;
-    width: 100%;
     box-shadow: 5px 5px 0 var(--color-black);
     color: var(--color-white);
     text-align: left;
     position: relative;
+    max-width: 450px;
+    flex-shrink:.5;
+
     /* Removed min-height to allow variable heights */
     /* Removed flex properties */
 }
 
 .feature-card h2 {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: bold;
     margin: 10px;
+    margin-top:20px;
 }
 
 .feature-card p {
@@ -473,14 +483,14 @@ header {
         margin-top: 0;
         overflow: visible;
         margin: 0;
-        padding: 10px;
+        padding: 1px;
     }
 
     
 
     .hero p {
         font-size: 2em; /* Adjusted font size */
-        padding: 0px;
+        padding: 10px;
         margin: 0;
         margin-top: -4em;
     }
@@ -521,19 +531,17 @@ header {
 @media (min-width: 769px) and (max-width: 1024px) {
     .feature {
         flex-direction: row;
-        width: 85%;
+        width: 100%;
     }
 
     .feature:nth-child(even) {
-        flex-direction: row;
+        flex-direction: row-reverse;
     }
 
-    .feature img {
-        display: none;
-    }
+
 
     .feature-card {
-        width: 100%;
+        width: 50%;
     }
 }
 
