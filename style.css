@@ -1,23 +1,25 @@
 /* =========================================================
    Global Theme Colors
-   ========================================================= */
-
-   :root {
+========================================================= */
+:root {
     --color-primary: #ff6232;    /* Vibrant Orange */
     --color-secondary: #FCFF55;  /* Bright Yellow */
     --color-black: #333330;      /* Dark Grey/Black */
     --color-white: #fffffa;      /* Off-White */
     --color-accent: #1375DB;     /* Deep Blue */
     --color-neutral: #fbf8ef;    /* Soft Beige */
-    
+    --header-height: 70px;       /* CSS Variable for header height */
+    --spacing-small: 0.5em;      /* Spacing Variables */
+    --spacing-medium: 1em;
+    --spacing-large: 2em;
+    --spacing-extra-large:4em
 }
 
 
 /* =========================================================
    Base Styles
-   ========================================================= */
 
-  
+
 /* Reset margins and paddings, set base font and text alignment */
 body {
     font-family: Arial, sans-serif;
@@ -25,202 +27,234 @@ body {
     padding: 0;
     text-align: center;
     overflow-x: hidden;
-    background-color:var(--color-neutral)
+    background-color: var(--color-neutral);
+    
 }
 
- /* {
-  border: 1px solid red;
-}*/
+section {
+    padding: 0 0px;;
+}
 /* =========================================================
-   Header Styles
-   ========================================================= */
+   Header and Nav Styles
+========================================================= */
 
+/* Base Header Styles */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 0px;
+    padding: 0 0px; /* Added horizontal padding for better spacing */
     background: var(--color-black);
     color: var(--color-white);
     position: fixed;
-    height: 100px;
-    display: block;
-    width: 100%;
+    width: 100vw; /* Changed from 100vw to 100% to prevent overflow */
+    height: var(--header-height); /* Set using CSS variable */
     z-index: 999;
-    top:0;
+    top: 0;
 }
 
+/* Nav Container */
 .nav-container {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center; /* Ensure vertical alignment */
-    width: 100%;
-    margin-top: 2em;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding-right: 0px;
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    justify-content: left;
+/* Logo */
+.logo img {
+    max-height: 100%; /* Ensures image fits within header */
+    max-width: 250px;
 }
 
-.logo img{
-    max-height: 50px;
-    margin-left: -30px;
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: var(--color-white);
-    cursor: pointer;
-}
-
+/* Navigation Links */
 .nav-links {
     display: flex;
-    gap: 25px;
-   
+    gap: 20px; /* Increased gap for better spacing */
 }
 
 .nav-links a {
     color: var(--color-white);
-    text-decoration: none; /* Remove underline */
-    font-size: 1.5em;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--color-accent);
 }
 
+/* CTA Button */
 .cta {
     background: var(--color-primary);
     color: var(--color-white);
-    border: none;
-    padding: 10px 15px;
+    border: 1px solid var(--color-black);
+    padding: 10px 20px;
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
-    transition: background 0.3s ease;
-    box-shadow: 1px 1px 0px var(--color-neutral);
-    border: 1px solid var(--color-black);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 1px 1px 0 var(--color-neutral);
+    margin-right: 20px; /* Added margin for spacing */
+    overflow: hidden;
 }
 
 .cta:hover {
     background: var(--color-accent);
+    box-shadow: 1px 1px 0 var(--color-black);
+}
+
+/* Hamburger Menu Toggle (Hidden on Large Screens) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Hide Nav Links and CTA Button on Small Screens */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: var(--color-black);
+        padding: 0px 0;
+        gap: 10px;
+    }
+
+    /* Show Hamburger Menu on Small Screens */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* When Menu is Active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Adjust CTA Button Positioning */
+    .cta {
+        display: none; /* Hide CTA in header */
+    }
+
+    /* Show CTA Button Inside Nav when Menu is Active */
+    .nav-links.active .cta {
+        display: block;
+        margin: 20px auto; /* Center the button within the menu */
+    }
+
+    /* Adjust Navigation Links Font Size for Better Visibility */
+    .nav-links a {
+        font-size: 1.5em;
+    }
 }
 
 /* =========================================================
    Hero Section
-   ========================================================= */
-
-  .hero h1 {
-    overflow:hidden;
-    vertical-align:center;
-    height:65vh;
-    justify-content:center;
-    align-content:center;
-    font-size:7em;
-    margin-bottom:0px;
-    padding-bottom: 0;
-  }
-  .hero {
-    height:120%;
-    background: #f2f2f2; /* Fallback for old browsers */
+========================================================= */
+.hero {
+    display: flex; /* Enable Flexbox */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; /* Center content vertically */
+    padding-top: var(--header-height); /* Offset for fixed header */
+    padding-bottom: var(--spacing-large); /* Adds breathing space at bottom */
+    height: calc(100vh - var(--header-height)); /* Dynamic height */
+    width: 100%; /* Changed from 100vw to 100% to prevent overflow */
     background: radial-gradient(circle, #fffffa 60%, #f2f2f2 80%, #8e8e8e 110%);
-    background-image: radial-gradient(closest-side, rgba(255, 255, 255, .94), rgba(255, 255, 255, .94), rgba(255, 255, 255, 1)), url('/images/grid.svg');
-	background-repeat: no-repeat, repeat;
-	background-size: auto, 75px 44px;
-    padding-top: 2em;
+    background-image: radial-gradient(closest-side, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 1)),
+                      url('/images/grid.svg');
+    background-repeat: no-repeat, repeat;
+    background-size: auto, 75px 44px;
+    position: relative;
+    left: 0;
     
-  }
+}
 
+.hero h1 {
+    font-size: 7em; /* Increased font size */
+    margin: 0em 0 var(--spacing-small) 0; /* Top and bottom margins */
+    text-align: center;
+    padding: .5em 0em 1em 0em;
+    overflow: hidden;
+    /* Removed fixed height */
+}
 
 .hero p {
-    position: relative;
-    font-size: 2.5em;
-    margin-top: -2em;
+    font-size: 2em; /* Increased font size */
+    padding: 0 20px; /* Horizontal padding */
+    text-align: center;
+    margin-top: -1em;
+    /* Removed fixed height and negative margin */
 }
 
- 
 .hero button {
-    margin-top: 2em;
-    width:25%;
-    height:55px;
+    margin-top: var(--spacing-small); /* Adjusted top margin */
+    width: 40%; /* Reduced width from 55% to 40% */
     font-size: 1em;
-    padding:0 6px;
+    padding: 0.75em 1.5em; /* Increased padding for better touch targets */
     border: 1px solid var(--color-black);
-    margin-bottom: 2em;
-    box-shadow: 5px 5px 0px var(--color-black);
-    
-  }
-
-.primary-btn {
-    background-color: var(--color-secondary);
-    border: 1px solid var(--color-black);
-    padding: 20px 40px;
+    box-shadow: 5px 5px 0 var(--color-black);
     cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-    
-}
-
-.primary-btn:hover {
-    background-color: var(--color-primary);
+    /* Removed fixed height */
+    margin-bottom: var(--spacing-extra-large);
 }
 
 /* =========================================================
    Services Section
-   ========================================================= */
-
+========================================================= */
 .services {
-    padding: 40px 20px;
+    padding: 0;
     background: var(--color-black);
     color: var(--color-white);
-    margin-top: 0em;
+    margin-top: 0;
+    max-width: 100%;
 }
 
 .services h2 {
     font-size: 2em;
     margin-bottom: 10px;
-  
 }
 
 .services p {
     font-size: 1em;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .icons {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Minimum width for each icon */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 5px;
-    font-size: 10px; /* Increase icon size to 4em */
+    font-size: 10px;
     justify-items: center;
-    position: relative; /* Required for tooltip positioning */
+    position: relative;
 }
 
 .icons .icon {
     transition: color 0.3s ease;
-    position: relative; /* Needed for tooltip */
+    position: relative;
     cursor: pointer;
-    height: 100px; /* Ensure icons are at least 150px tall */
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none; /* Remove underline */
-    padding:30px 0px;
-    
+    text-decoration: none;
+    padding: 20px 0;
 }
 
 .icons img {
-    height: 200px; 
-    display: flex;
+    height: 50px;
     width: auto;
-    
-} 
+    max-width: 600px; /* Set maximum width to 600px */
+}
 
 .icons .icon:hover {
     color: var(--color-white);
@@ -230,119 +264,269 @@ header {
 .icons .icon::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 10%; /* Position above the icon */
-    left: 0%;
+    bottom: 10%;
+    left: 0;
     transform: translateX(-5px);
-    margin: 0 auto;
-    background-color:var(--color-white);
+    background-color: var(--color-white);
     color: var(--color-black);
-    padding: 10px 10px;
+    padding: 10px;
     border-radius: 5px;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease, bottom 0.3s ease;
-    font-size: 2.2em; /* Increase tooltip text size to 2em */
+    font-size: 2.2em;
     z-index: 10;
-    justify-content: left;
-    width: auto;
-    
-
-    
 }
 
 .icons .icon:hover::after {
-    opacity: .85;
-    bottom: -10%; /* Slightly higher on hover */
+    opacity: 0.85;
+    bottom: -10%;
 }
-
-@media (max-width: 800px)  {
-    .services {
-        margin-bottom:0px ;
-    }
-    
-}
-
 
 /* =========================================================
-   Features Section (Desktop First)
-   ========================================================= */
-
-   .features {
+   Features Section
+========================================================= */
+.features {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3em;
+    gap: 2em;
     padding: 20px 20px;
-    width: 100%;
-    justify-content: center;
-    background-image: radial-gradient(closest-side, rgba(255, 255, 255, .94), rgba(255, 255, 255, .94), rgba(255, 255, 255, 1)), url('/images/grid.svg');
-	background-repeat: no-repeat, repeat;
-	background-size: auto, 75px 44px;
-    margin-top: 0px;
-    /* Ensure the background image does not stretch */
-   
+    background: radial-gradient(closest-side, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 1)),
+                url('/images/grid.svg');
+    background-repeat: no-repeat, repeat;
+    background-size: auto, 75px 44px;
+    margin-top: 0;
     border-bottom: 2px solid #f0ecec;
-}
-
-
-/* Feature Container (Image + Card) */
-.feature {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10%;
-    width: 100%;
-    justify-content: center;
-}
-
-/* Alternate Layout: Image Left / Right */
-.feature:nth-child(even) {
-    flex-direction: row-reverse;
+    max-width: 100%;
 }
 
 .features h2 {
     font-size: 2.5em;
-    margin-bottom: 0px;;
-}
-/* Feature Images (Take 40% of Screen Width) */
-.feature img {
-    width:40%;
-    max-width: 850px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 10px;
-    flex-shrink: 0;
-    margin-bottom: 2em;
-    margin-top: 2em;
+    margin-bottom: 0;
 }
 
-/* Feature Card (Takes 35% of Screen Width) */
+.feature {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    justify-content: center;
+    gap: 1em; /* Spacing between image and card */
+    width: 90%;
+    padding: 2em 4em;
+}
+
+.feature:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.feature img {
+    width: 60%;
+    max-width: 600px; /* Increased max-width to 600px */
+    height: auto;
+    border-radius: 10px;
+    flex-shrink: 1;
+    margin: 0 0;
+    padding: 0em 2em;
+}
+
 .feature-card {
-    background: var(--color-primary); /* Primary brand color (orange) */
-    padding: 20px;
+    background: var(--color-primary);
+    padding: 10px;
     border-radius: 16px;
-    width: 40%;
-    box-shadow: 5px 5px 0px var(--color-black);
+    width: 100%;
+    box-shadow: 5px 5px 0 var(--color-black);
     color: var(--color-white);
     text-align: left;
     position: relative;
+    /* Removed min-height to allow variable heights */
+    /* Removed flex properties */
 }
 
-/* Feature Titles */
 .feature-card h2 {
     font-size: 2.5em;
     font-weight: bold;
-    margin: 10px 10px 20px 10px;
+    margin: 10px;
+}
+
+.feature-card p {
+    word-wrap: break-word;
+}
+
+/* =========================================================
+   Responsive Styles
+========================================================= */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Header Adjustments */
+    header {
+        height: var(--header-height);
+    }
+
+    .nav-container {
+        justify-content: space-between;
+        width: 100vw;
+        margin: 1em 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 3em;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--color-black);
+        position: absolute;
+        top: var(--header-height); /* Aligns dropdown below header */
+        right: 0;
+        z-index: 1000;
+        width: 100%;
+        padding: 0px;
+        opacity: 0.9;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Hero Section Adjustments */
+    .hero {
+        /* Flexbox properties already set above */
+        /* Ensure .hero remains flex container */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: var(--header-height); /* Prevents overlap with header */
+        padding-bottom: var(--spacing-small); /* Maintains breathing space */
+        height: calc(100vh - var(--header-height)); /* Dynamic height */
+        width: 100%;
+        object-fit:contain;
+
+        
+    }
+
+    .hero h1 {
+        font-size: 4em;
+        /* Remove or reduce horizontal margins */
+        margin: 0 0; 
+        overflow: hidden;
+      }
+
+    .hero p {
+        font-size: 1.5em; /* Ensure readability */
+        padding: 0.5em; /* Adjusted padding */
+        margin-top: -2em;
+        object-fit:contain;
+    }
+
+    .hero button {
+        width: 40%; /* Made less wide */
+        padding: 0.75em 1.5em; /* Increased padding */
+        font-size: 1em;
+        margin-top: 4em; /* Adjusted top margin */
+        box-shadow: 5px 5px 0 var(--color-black);
+        /* Removed fixed height */
+    }
+
+    .words-wrapper {
+        font-size: 1.25em;
+        font-weight: bold;
+        text-align: center;
+        width: 90%;
+        overflow: hidden;
+        margin-top: var(--spacing-large); /* Adjusted to reduce white space */
+        object-fit: cover;
+    }
+
+    /* Features Section Adjustments */
+    .features {
+        gap: 2em; /* Reduced gap for tighter layout */
+    }
+
+    .feature, .feature:nth-child(even) {
+        flex-direction: column;
+        width: 90%;
+        margin: 0;
+        gap: 20px;
+    }
+
+    .feature img {
+        display: none; /* Ensure feature images are hidden on mobile */
+    }
+
+    .feature-card {
+        width: 100%;
+    }
+}
+
+/* Additional Media Query for Screens Below 500px */
+@media (max-width: 500px) {
+    .hero h1 {
+        font-size: 4em; /* Adjusted font size for very small screens */
+        margin-top: -.25em;
+        overflow: hidden;
+    }
+
+    
+
+    .hero p {
+        font-size: 1.2em; /* Adjusted font size */
+    }
+
+    .hero button {
+        width: 60%; /* Slightly wider but still less than original */
+        padding: 0.75em 1.2em; /* Adjusted padding */
+    }
+
+    .words-wrapper .words {
+        font-size: 1em; /* Ensure word rotator text scales down */
+    }
+
+    .logo img {
+        max-height: 180px; /* Ensures image fits within header */
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 3.5em; /* Adjusted font size for very small screens */
+        margin-top: -.25em;
+        overflow: hidden;
+    }}
+
+/* =========================================================
+   Tablet Styles
+========================================================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .feature {
+        flex-direction: row;
+        width: 85%;
+    }
+
+    .feature:nth-child(even) {
+        flex-direction: row;
+    }
+
+    .feature img {
+        display: none;
+    }
+
+    .feature-card {
+        width: 100%;
+    }
 }
 
 /* =========================================================
    Checklist Items
-   ========================================================= */
-
+========================================================= */
 .checklist-item {
     background: var(--color-white);
-    padding: 12px 12px 12px 45px; /* Extra left padding to align text properly */
+    padding: 12px 12px 12px 45px;
     display: flex;
     align-items: center;
     border-radius: 10px;
@@ -351,99 +535,91 @@ header {
     position: relative;
 }
 
-/* Checkmark Box - Overlaps the left side but stays inside the off-white background */
 .checkmark {
-    
     width: 24px;
     height: 24px;
-    background: var(--color-secondary); /* Bright Yellow */
-    border: 1px solid var(--color-black); /* Hard black border */
-    box-shadow: 2px 2px 0px var(--color-black);
+    background: var(--color-secondary);
+    border: 1px solid var(--color-black);
+    box-shadow: 2px 2px 0 var(--color-black);
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 22px;
-    font-weight: normal;
     position: absolute;
-    left: 5px; /* Adjusted to keep inside */
+    left: 5px;
     top: 50%;
     transform: translateY(-50%);
 }
 
-/* Hide checkmark by default */
 .checkmark::after {
     content: "✓";
     color: var(--color-black);
-    font-size: 40px; /* Large checkmark */
-    font-weight: lighter;
+    font-size: 40px;
     position: absolute;
-    top: -15px; 
+    top: -15px;
     right: -10px;
-    opacity: 0; /* Hide initially */
-    transform: scale(0.5); /* Shrink effect */
+    opacity: 0;
+    transform: scale(0.5);
     transition: opacity 0.5s ease, transform 0.3s ease;
 }
 
-/* Show checkmark when in viewport */
 .checkmark.visible::after {
     opacity: 1;
     transform: scale(1);
 }
 
-
 /* =========================================================
-   Mobile Styling
-   ========================================================= */
-
-@media (max-width: 768px) {
-    .features {
-        padding: 0px;
-        gap: 40px; /* Reduce gap for a tighter layout */
-        padding-bottom: 50px;
-    }
-
-    .feature {
-        flex-direction: column !important;
-        width:80%;
-        margin: 0px;
-        gap: 20px;
-    }
-
-    .feature h2 {
-        font-size: 1.8em;
-    }
-    /* Hide images on mobile */
-    .feature img {
-        display: none;
-    }
-
-    /* Full-width feature cards on mobile */
-    .feature-card {
-        width: 100%;
-    }
-
-    /* Adjust checklist styling for smaller screens */
-    .checklist-item {
-        padding: 10px 10px 10px 40px; /* Adjust padding for mobile */
-    }
-
-    .checkmark {
-        width: 22px;
-        height: 22px;
-        font-size: 20px;
-        left: 3px; /* Adjust left position slightly */
-    }
-
-    .checkmark::after {
-        font-size: 36px; /* Slightly smaller checkmark on mobile */
-        top: -12px;
-        right: -8px;
-    }
+   Newsletter Section
+========================================================= */
+.newsletter {
+    background: var(--color-accent);
+    height: auto;
+    text-align: left;
+    flex-direction: column;
+    font-size: 2.5em;
+    border-radius: 20px; /* Ensure no radius on mobile */
+    width: 100%;
+    box-shadow: 5px 5px 0 var(--color-black);
+    overflow: hidden;
 }
 
+.newsletter-container {
+    margin: 5%;
+    width: 90%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.newsletter h3 {
+    padding: 20px 0 0 20px;
+}
+
+.newsletter p {
+    padding: 10px 5px 0 20px;
+}
+
+.newsletter button {
+    margin: 20px;
+    padding: 20px;
+}
+
+.primary-btn {
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-black);
+    padding: 20px 40px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.primary-btn:hover {
+    background-color: var(--color-primary);
+}
 
 .secondary-btn {
     background: var(--color-black);
-    color: var(--color-white);;
+    color: var(--color-white);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -456,101 +632,24 @@ header {
     background: #333;
 }
 
-/* =========================================================
-   Newsletter Section
-   ========================================================= */
+@media (max-width:768px) {
 
-.newsletter {
-    background: var(--color-accent);
-    margin: 0px ;
-    height: auto;
-    text-align: left;
-    flex-direction: column;  /* Stack elements vertically */
-    font-size: 2.5em;
-    border-radius: 20px;
-    margin: 0;
-    width: 100%;
-    box-shadow: 5px 5px 0px var(--color-black);
-   
-}
-
-.newsletter h3   {
-    padding: 20px 0px 0px 20px;
-}
-
-.newsletter p   {
-    padding: 10px 5px 0px 20px;
-}
-
-.newsletter button {
-    margin: 20px;
-    padding: 20px;
-}
-.newsletter-container {
-    
-    margin: 5%;
-    width: 90%;
-    /* Ensure the background image does not stretch */
-    background-size: contain; /* Adjusts the image to fit without stretching */
-    background-repeat: no-repeat; /* Prevents tiling */
-}
-/* Mobile Adjustments */
-@media (max-width: 768px) {
+    .newsletter {
+        border-radius: 0px;
+        box-shadow: none;
+    }
 
     .newsletter-container {
-        margin: 0px;
-        margin-top: 0px;
-        width: 100%;
-        background: var(--color-accent);
-        justify-content: center;
-        align-content: center;
-
-    }
-    .newsletter {
-        align-content: center;
-        margin: 20px 0px 0px !important;
-        height: auto;
-        border-radius: 0px;
-        text-align: center;
-        width: 100%;
-        flex-direction: column;  /* Stack elements vertically */
-        font-size: 2.5em;
-        justify-content: center;
-        padding: 0px 0px 0px 0px;
-        box-shadow:none;
-
-          }
-
-    .newsletter h3 {
-        width: 100%;  /* Makes sure it takes full width */
-        padding: 0px 20px 0px 0px;
-    }
-
-    
-
-    .newsletter p {
-        width: 100%;  /* Ensures it takes full width */
-        padding: 0px 5px 20px 0px;
-        font-size: .5em;
-    }
-
-    .newsletter button {
-        margin: 0px;
-        justify-content: center;
-        align-content: center;
-        text-align: center;
-        padding: 20px;
-        margin-bottom: 40px;
-    }
+        margin: 0%;
+      
+        width: 100%;}
 
 }
 
 
-
 /* =========================================================
-   Footer Styles
-   ========================================================= */
-
+   Footer Styles (Unchanged)
+========================================================= */
 footer {
     background-color: black;
     padding: 20px;
@@ -574,19 +673,16 @@ footer {
     font-weight: bold;
     color: #ff0;
     background-color: #222;
-    padding: 0px 2px;
+    padding: 0 2px;
     border-radius: 5px;
     text-transform: uppercase;
     display: inline-block;
     text-align: left;
     max-width: 90%;
-    
 }
 
 .footer-logo img {
     max-height: 60px;
-    justify-content: left;
-    padding-right: 0;
     margin-left: -25px;
 }
 
@@ -594,7 +690,7 @@ footer {
     margin: 10px 0;
     font-size: 14px;
     max-width: 300px;
-    color:white;
+    color: white;
 }
 
 .footer-right {
@@ -651,193 +747,6 @@ copyright {
     color: #aaa;
 }
 
-/* =========================================================
-   Rotating Word Animation
-   ========================================================= */
-
-
-
-   .words-wrapper .words {
-    display: inline-block;
-    position: relative;
-    vertical-align: bottom;
-    width: var(--width);
-    border-radius: 6px;
-    color: var(--color, var(--color-white));
-    background: var(--color-bg, var(--color-primary));
-    box-sizing: content-box;
-    transition: all 0.8s;
-    padding: 0;
-    height: 25%;
-  }
-  
-  .words-wrapper .words span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    opacity: 0;
-    transform: translate(-50%, -100%);
-    transition: transform 0.9s, opacity 0.15s 0.15s;
-    padding: 0 10px;
-    justify-content: center;
-  }
-  
-  .words-wrapper .words span.current {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-  
-  .words-wrapper .words span.next {
-    transform: translate(-50%, 100%);
-  }
-  
-
-
-
-@media (max-width: 800px) {
-  .words-wrapper .words {
-    width: var(--width);
-   
-   }
-  
-  .words-wrapper .words span {
-    padding-left:10px;
-    padding-right:10px;
-    padding-top: 10px;
-  }
-  
-
-  .hero p{
-    font-size: 2em;
-    margin-top: 1em;
-    margin-bottom: 0em;
-    padding: .5em;
-  }
-  .hero h1{
-    font-size: 5em;
-    height: 50vh;
-  }
-  
-  .hero button {
-    margin-top: 3em;
-    width:55%;
-    height:55px;
-    font-size: 1em;
-    padding:0 6px;
-    border: 1px solid var(--color-black);
-    margin-bottom:0em;
-    clear: both;
-    
-  }
-
-  .words-wrapper {
-    font-size: 1.25em;
-    font-weight: bold;
-    text-align: center;
-      
-  }
-}
-
-@keyframes rotateWords {
-    0% { transform: translateY(0); opacity: 1; }
-    20% { opacity: 1; }
-    25% { transform: translateY(-100%); opacity: 0; }
-    95% { transform: translateY(-100%); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-}
-
-/* =========================================================
-   Mobile Styles
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    header{
-    height: 70px;
-    }
-
-    .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center; /* Ensure vertical alignment */
-        width: 90%;
-        margin: 1em 0;
-        padding-left: 10px;
-    }
-
-    .menu-toggle {
-        font-size: 3em;
-    }
-    /* Navigation Toggle */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: var(--color-black);
-        position: absolute;
-        top: 80px; /* Adjust based on header height */
-        right: 40;
-        z-index: 1000; /* Ensure it overlays other content */
-        width: 100vw;
-        padding: 10px;
-        opacity: .9;
-        
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-        font-size: 2em;
-    }
-
-    
-
-    /* Footer Adjustments */
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        color: white;
-    }
-
-    .footer-left,
-    .footer-right {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-
-    .footer-nav {
-        justify-content: center;
-    }
-
-    .footer-links {
-        text-align: center;
-    }
-
-    /* Services Icons Adjustments */
-    .icons {
-        grid-template-columns: repeat(3, 1fr); /* Max 3 icons per row */
-        padding: 1em;
-    }
-
-
-    /* Increase tooltip text size on mobile */
-    .icons .icon::after {
-        font-size: 2em;
-    }
-    
-}
-
-/* =========================================================
-   Desktop Styles
-   ========================================================= */
 @media (min-width: 769px) {
     .footer-container {
         flex-direction: row;
@@ -847,14 +756,12 @@ copyright {
     }
 
     .footer-left {
-        display: flex;
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 0;
     }
 
     .footer-right {
-        display: flex;
         flex-direction: column;
         align-items: flex-end;
     }
@@ -874,20 +781,78 @@ copyright {
         justify-content: flex-end;
     }
 
-    .copyright {
+    copyright {
         align-self: flex-end;
+    }
+
+    /* Hero Section Desktop Adjustments */
+    .hero {
+        padding-top: var(--header-height);
+    }
+
+    .words-wrapper {
+        max-width: 90%;
+        margin: 1em 0;
+        overflow-x: hidden;
     }
 }
 
+/* =========================================================
+   Rotating Word Animation
+========================================================= */
+.words-wrapper .words {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    width: var(--width);
+    border-radius: 6px;
+    color: var(--color, var(--color-white));
+    background: var(--color-bg, var(--color-primary));
+    box-sizing: content-box;
+    transition: all 0.8s;
+    padding: 0;
+    height: 1.2em;
+}
+
+.words-wrapper .words span {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    transition: transform 0.9s, opacity 0.15s 0.15s;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+.words-wrapper .words span.current {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.words-wrapper .words span.next {
+    transform: translate(-50%, 100%);
+}
+
+@keyframes rotateWords {
+    0%, 20% { transform: translateY(0); opacity: 1; }
+    25%, 95% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* =========================================================
+   Animations
+========================================================= */
 /* Initial state: Hidden and moved down */
 .fade-up {
     opacity: 0;
-    transform: translateY(80px); /* Move down 30px */
+    transform: translateY(80px);
     transition: opacity 0.6s ease-out, transform 0.7s ease-out;
+    max-width: 100%;
 }
 
 /* When in viewport, fade in and move up */
 .fade-up.visible {
     opacity: 1;
-    transform: translateY(0); /* Move to normal position */
+    transform: translateY(0);
 }

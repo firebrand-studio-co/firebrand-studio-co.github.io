@@ -1,6 +1,18 @@
-// Function to toggle the navigation menu
 function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('active');
+  const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const ctaButton = document.querySelector('.cta');
+
+  navLinks.classList.toggle('active');
+  menuToggle.classList.toggle('active');
+
+  if (navLinks.classList.contains('active')) {
+      // Move CTA Button into Nav Links
+      navLinks.appendChild(ctaButton);
+  } else {
+      // Move CTA Button back to Nav Container
+      document.querySelector('.nav-container').appendChild(ctaButton);
+  }
 }
 
 const wrapper = document.querySelector(".words");
