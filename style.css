@@ -21,7 +21,7 @@
 
 
 /* Reset margins and paddings, set base font and text alignment */
-body {
+body.homepage {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -31,7 +31,18 @@ body {
     
 }
 
-
+body.service {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #fffffa 60%, #f2f2f2 80%, #8e8e8e 110%);
+    background-image: radial-gradient(closest-side, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 1)),
+                      url('/images/grid.svg');
+    background-repeat: no-repeat, repeat;
+    background-size: auto, 75px 44px;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
 /* ==================================================c=======
    Header and Nav Styles
 ========================================================= */
@@ -154,6 +165,7 @@ header {
         font-size: 1.5em;
     }
 }
+
 
 /* =========================================================
    Hero Section
@@ -887,3 +899,259 @@ copyright {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/* =========================================================
+   FIRE Framework Section
+========================================================= */
+
+.fire-framework {
+    text-align: center;
+    padding: var(--spacing-extra-large) var(--spacing-medium);
+    background: var(--color-neutral);
+}
+
+.fire-title {
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.fire-subtitle {
+    font-size: 1.5em;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-large);
+}
+
+.fire-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-large);
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.fire-card {
+    background: var(--color-white);
+    padding: var(--spacing-large);
+    border-radius: 12px;
+    box-shadow: 5px 5px 0 var(--color-black);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.fire-card:hover {
+    transform: scale(1.05);
+    box-shadow: 8px 8px 0 var(--color-black);
+}
+
+.fire-icon {
+    font-size: 3em;
+    margin-bottom: var(--spacing-medium);
+    color: var(--color-primary);
+}
+
+.fire-heading {
+    font-size: 1.8em;
+    color: var(--color-black);
+    font-weight: bold;
+}
+
+.fire-text {
+    font-size: 1em;
+    color: var(--color-black);
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .fire-title {
+        font-size: 2.5em;
+    }
+    
+    .fire-subtitle {
+        font-size: 1.3em;
+    }
+    
+    .fire-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fire-card {
+        padding: var(--spacing-medium);
+    }
+}
+
+/* =========================================================
+   Animated Floating Shape Background Section
+========================================================= */
+
+.animatedbg {
+    position: relative;
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Make shapes more visible by increasing base opacity */
+  .shape {
+    position: absolute;
+    animation: floatAnimation linear infinite;
+    opacity: 0.5; /* increased from 0.2 for higher visibility */
+  }
+  
+  /* Floating animation */
+  @keyframes floatAnimation {
+    from {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(-10vh) rotate(360deg);
+      opacity: 0.5;
+    }
+  }
+  
+  /* All shapes: smaller circles and general sizing */
+  .animatedbg .shape:nth-child(n) {
+    /* Smaller max size for circles/plus signs. 
+       Adjust as needed. 
+       (Example: previously 10px + 50px * var(--size)) */
+    width: calc(5px + (20px * var(--size)));
+    height: calc(5px + (20px * var(--size)));
+    top: calc(100% * var(--start));
+    left: calc(100vw * var(--position));
+    animation-duration: calc(15s + 15s * var(--speed));
+    animation-delay: calc(-15s * var(--delay));
+  }
+  
+  /* Filled circles */
+  .circle {
+    background-color: #333330;
+    border-radius: 50%;
+  }
+  
+  /* Outlined circles */
+  .circle.outline {
+    background: none;
+    border: 2px solid #333330;
+    border-radius: 50%;
+  }
+  
+  /* Plus signs in orange */
+  .plus {
+    font-size: calc(10px + (70px * var(--size))); /* Adjust scale as needed */
+    color: orange; /* Use orange color for the plus symbol */
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+/* =========================================================
+   SERVICES PAGES
+========================================================= */
+
+/* =========================================================
+   Animated Floating Shape Background Section
+========================================================= */
+
+
+.services-banner {
+        /* Position above the animated background */
+        position: absolute;
+        z-index: 3; /* Higher than .animatedbg which has z-index: 1 */
+      
+        /* Spacing & Layout */
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly; /* keep image on the right */
+        top:30px;
+        left: 0px;
+        width:100vw;
+        padding-right: 0px;
+      
+}
+      
+      /* Text block */
+.services-banner-content {
+        text-align: left;
+        max-width: 600px; /* adjust as needed */
+        padding-top: 50px;
+        align-content: start;
+        
+}
+      
+      .services-title {
+        font-size: 4em; /* reuse or tweak to match your design */
+        color: var(--color-black);
+        padding: 0px  0px 0px 25px;
+        align-content: start;
+      }
+      
+      .services-subtitle {
+        margin: 0;
+        font-size: 1.8em;
+        line-height: 1.4;
+        color: var(--color-black);
+        padding:0px 0px 0px 30px;
+      }
+      
+      /* Image rules */
+      .services-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        max-width: 550px;
+        overflow: hidden;
+        padding: 50px 50px 0px 50px;
+      }
+      
+      /* Responsive: stack on smaller screens */
+      @media (max-width: 768px) {
+
+        .services-banner {
+          flex-direction: column;
+          justify-content:space-between;
+          height: 100vh;
+          text-align: center;
+          margin-top: -5em;
+
+        }
+      
+        .services-image {
+          max-width: 90%;
+          align-self: center;
+          padding: 0px 0px 0px 0px;
+          position:relative;         
+        }
+        
+        .services-title {
+        padding-top: 1em;
+        font-size:4em;
+        text-align: center;
+        padding: 2em 0em 0em .1em;
+        margin: 0;
+        }
+        
+        .services-subtitle {
+            text-align: center;
+            padding-bottom: 0em;
+            padding-top:1em ;
+        }
+        .animatedbg {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            padding-top: 0em;
+            max-height:100vh;
+            align-content: center;
+            justify-content: center;
+        }
+        
+      }
+
+      
