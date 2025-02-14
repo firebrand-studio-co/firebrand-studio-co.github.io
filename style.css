@@ -13,6 +13,9 @@
     --spacing-medium: 1em;
     --spacing-large: 2em;
     --spacing-extra-large:4em
+    --font-primary: "Noto Sans",'Open Sans', 'sans-serif';
+    --font-monospace: 'Space Mono', monospace;
+
 }
 
 
@@ -22,12 +25,14 @@
 
 /* Reset margins and paddings, set base font and text alignment */
 body.homepage {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-primary);
     margin: 0;
     padding: 0;
     text-align: center;
     overflow-x: hidden;
     background-color: var(--color-neutral);
+    font-family: "Noto Sans"
+
     
 }
 
@@ -41,6 +46,8 @@ body.service {
     background-size: auto, 75px 44px;
     overflow-x: hidden;
     position: relative;
+    font-family: "Noto Sans"
+
 }
 
 body.services-overview {
@@ -49,7 +56,9 @@ body.services-overview {
     background-image: radial-gradient(closest-side, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 1)),
                       url('/images/grid.svg');
     background-repeat: no-repeat, repeat;
-    background-size: auto, 75px 44px;}
+    background-size: auto, 75px 44px;
+    font-family: "Noto Sans"
+}
 /* ==================================================c=======
    Header and Nav Styles
 ========================================================= */
@@ -996,7 +1005,7 @@ copyright {
 .animatedbg {
     position: absolute;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -1080,7 +1089,7 @@ copyright {
         left: 0px;
         width:100%;
         padding-right: 0px;
-        height: 80vh;
+        height: 90vh;
         overflow: hidden;
       
 }
@@ -1106,7 +1115,7 @@ copyright {
         font-size: 1.5em;
         line-height: 1.4;
         color: var(--color-black);
-        padding:0px 10px 0px 10px;
+        padding:0px 50px 0px 50px;
         position: relative;
         
 
@@ -1128,7 +1137,7 @@ copyright {
 
         .services-banner {
           flex-direction: column;
-          height: 90vh;
+          height: 80vh;
           text-align: center;
           margin-top: -5em;
 
@@ -1152,7 +1161,7 @@ copyright {
         .animatedbg {
             position: absolute;
             width: 100vw;
-            height: 80vh;
+            height: 100vh;
             padding-top: 0em;
             max-height:100vh;
             align-content: center;
@@ -1177,7 +1186,7 @@ copyright {
     .services-overview-page {
         padding: 0;
         box-sizing: border-box;
-        font-family: "Space Grotesk", sans-serif;
+        font-family: var(--font-primary);
         color: #191A23;
         position: relative;
         background-color:var(--color-white)
@@ -1192,19 +1201,18 @@ copyright {
     
     .services-overview-page__title {
         padding: 0em;
-        margin: 1em;
+        margin: 0em;
         box-sizing: border-box;
-        font-family: "Space Grotesk", sans-serif;
+        font-family: var(--font-primary);
         color: #191A23;
         display: flex;
         align-items: start;
-        gap: 2rem;
+        gap: 1rem;
         flex-wrap: wrap;
     }
     
     .services-overview-page__items {
         box-sizing: border-box;
-        font-family: "Space Grotesk", sans-serif;
         color: #191A23;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1219,7 +1227,7 @@ copyright {
     .services-overview-page__item {
         margin: 1em;
         box-sizing: border-box;
-        font-family: "Space Grotesk", sans-serif;
+        font-family: var(--font-primary);
         color: #333330;
         background-color: #F3F3F3;
         border-radius: 45px;
@@ -1233,7 +1241,6 @@ copyright {
     
     .services-overview-page h1 {
         box-sizing: border-box;
-        font-family: "Space Grotesk", sans-serif;
         color: #191A23;
         background-color: none;
         padding: .5em;
@@ -1246,9 +1253,8 @@ copyright {
     
     .services-overview-page p {
         padding: .5em;
-        margin: 0em;
+        margin: 1em;
         box-sizing: border-box;
-        font-family: "Space Grotesk", sans-serif;
         color: #000001;
         width: 100%;
         font-size: 28px;
@@ -1261,7 +1267,6 @@ copyright {
     .services-overview-page__item--orange {
         margin: 1em;
         box-sizing: border-box;
-        font-family: "Space Grotesk", sans-serif;
         color: #333330;
         border-radius: 45px;
         border: 1px solid black;
@@ -1275,7 +1280,6 @@ copyright {
     .services-overview-page__item--black {
         margin: 1em;
         box-sizing: border-box;
-        font-family: "Space Grotesk", sans-serif;
         color: #fffffa;
         border-radius: 45px;
         border: 1px solid black;
@@ -1318,6 +1322,10 @@ copyright {
         width: 100px; /* Sets a fixed width */
         height: auto; /* Keeps the aspect ratio of the image */
         margin-left: 20px; /* Adds space between the text and the image */
+    }
+
+    .services-overview-page__title p {
+        padding:50px;
     }
     
     /* Styles for desktop positioning */
@@ -1362,14 +1370,14 @@ copyright {
             justify-content: space-between;
             text-align: center;
             width: 100%;
-            padding: .5em;
+            padding:0 10px;
         }   
         
         .services-overview-page__title {
             flex-wrap: wrap;
         }
         .services-overview-page__title p {
-            padding: 0px;
+            padding: 50px;
             margin: 0em;
             font-size: 24px;
             text-align: left;
