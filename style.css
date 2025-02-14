@@ -12,9 +12,9 @@
     --spacing-small: 0.5em;      /* Spacing Variables */
     --spacing-medium: 1em;
     --spacing-large: 2em;
-    --spacing-extra-large:4em
-    --font-primary: "Noto Sans",'Open Sans', 'sans-serif';
-    --font-serif: 'Space Grotesk', serif;
+    --spacing-extra-large:4em;
+    --font-headers: "Inter","Noto Sans", "sans-serif";
+    --font-body: "Open Sans";
 
 }
 
@@ -25,49 +25,26 @@
 
 /* Reset margins and paddings, set base font and text alignment */
 body.homepage {
-    font-family: var(--font-primary);
     margin: 0;
     padding: 0;
     text-align: center;
     overflow-x: hidden;
     background-color: var(--color-neutral);
-    font-family: "Noto Sans"
+    font-family: "Open Sans"
 
     
 }
 
-body.homepage-inter {
-    font-family: var(--font-primary);
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    overflow-x: hidden;
-    background-color: var(--color-neutral);
-    font-family: "Inter"
-
-    
+button {
+    font-family: "Inter";
 }
 
-body.homepage-space-grotesque {
-    font-family: var(--font-primary);
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    overflow-x: hidden;
-    background-color: var(--color-neutral);
-    font-family: "Space Grotesk"
-
-    
+h1,h2,h3,h4,h5,h6, a {
+    font-family: "Inter";
 }
 
-body.homepage-shadows {
-    margin: 0;
-    padding: 0;
-    background-image: radial-gradient(closest-side, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 1)),
-                      url('/images/grid.svg');
-    background-repeat: no-repeat, repeat;
-    background-size: auto, 75px 44px;
-    font-family:"Shadows Into Light", serif;
+p {
+    font-family: "Open Sans";
 }
 
 body.service {
@@ -80,7 +57,7 @@ body.service {
     background-size: auto, 75px 44px;
     overflow-x: hidden;
     position: relative;
-    font-family: "Noto Sans"
+    font-family: "Open Sans"
 
 }
 
@@ -91,7 +68,7 @@ body.services-overview {
                       url('/images/grid.svg');
     background-repeat: no-repeat, repeat;
     background-size: auto, 75px 44px;
-    font-family: "Noto Sans"
+    font-family: "Open Sans"
 }
 
 
@@ -247,6 +224,7 @@ header {
     margin: 0em 0 var(--spacing-small) 0; /* Top and bottom margins */
     text-align: center;
     overflow: hidden;
+    font-family: var(--font-headers);
     /* Removed fixed height */
 }
 
@@ -287,6 +265,7 @@ header {
     margin-top: 0px !important;
     margin-bottom: 10px;
     padding-top: 20px;
+    font-family: "Inter";
 }
 
 .services p {
@@ -371,6 +350,7 @@ header {
 
 .features h2 {
     font-size: 2.5em;
+    font-family: "Inter";
     margin-bottom: 0;
     
 }
@@ -420,6 +400,7 @@ header {
     font-weight: bold;
     margin: 10px;
     margin-top:20px;
+    font-family: "Inter";
 }
 
 .feature-card p {
@@ -489,6 +470,7 @@ header {
         /* Remove or reduce horizontal margins */
         padding: 0.5em 0em; 
         overflow: visible;
+        font-family: "Inter";
         
         
       }
@@ -548,6 +530,7 @@ header {
         overflow: visible;
         margin: 0;
         padding: 1px;
+        font-family: "Inter";
     }
 
     
@@ -582,6 +565,7 @@ header {
         font-size: 3.5em; /* Adjusted font size for very small screens */
         margin-top: -.25em;
         overflow: hidden;
+        font-family: "Inter";
     }
     .hero p {
         font-size: 1.5em;
@@ -1222,7 +1206,7 @@ copyright {
     .services-overview-page {
         padding: 0;
         box-sizing: border-box;
-        font-family: var(--font-primary);
+        font-family: var(--font-headers);
         color: #191A23;
         position: relative;
         background-color:var(--color-white)
@@ -1239,7 +1223,7 @@ copyright {
         padding: 0em;
         margin: 0em;
         box-sizing: border-box;
-        font-family: var(--font-primary);
+        font-family: var(--font-headers);
         color: #191A23;
         display: flex;
         align-items: start;
@@ -1263,7 +1247,7 @@ copyright {
     .services-overview-page__item {
         margin: 1em;
         box-sizing: border-box;
-        font-family: var(--font-primary);
+        font-family: var(--font-headers);
         color: #333330;
         background-color: #F3F3F3;
         border-radius: 45px;
@@ -1284,6 +1268,7 @@ copyright {
         font-weight: 600;
         width: 100%;
         text-align: center;
+        font-family: "Inter";
         
     }
     
@@ -1407,6 +1392,7 @@ copyright {
             text-align: center;
             width: 100%;
             padding:0 10px;
+            font-family: "Inter";
         }   
         
         .services-overview-page__title {
@@ -1467,6 +1453,7 @@ copyright {
             font-size: 1.5em; /* Decrease font size slightly */
             text-align: left;
             padding: 0em;
+            font-family: "Inter";
         }
 
         .services-overview-page h1 {
@@ -1476,6 +1463,7 @@ copyright {
             justify-content: center;
             align-content: center;
             text-align: center;
+            font-family: "Inter";
         }
 
         
