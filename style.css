@@ -34,15 +34,22 @@ body.homepage {
 body.service {
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle, #fffffa 60%, #f2f2f2 80%, #8e8e8e 110%);
+    background: radial-gradient(circle, #fffffa 60%, #fffffa 80%, #8e8e8e 110%);
     background-image: radial-gradient(closest-side, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 1)),
                       url('/images/grid.svg');
     background-repeat: no-repeat, repeat;
     background-size: auto, 75px 44px;
-    font-family: Arial, sans-serif;
     overflow-x: hidden;
     position: relative;
 }
+
+body.services-overview {
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(closest-side, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 1)),
+                      url('/images/grid.svg');
+    background-repeat: no-repeat, repeat;
+    background-size: auto, 75px 44px;}
 /* ==================================================c=======
    Header and Nav Styles
 ========================================================= */
@@ -987,12 +994,12 @@ copyright {
 ========================================================= */
 
 .animatedbg {
-    position: relative;
+    position: absolute;
     width: 100vw;
-    height: 70vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     overflow: hidden;
   }
   
@@ -1062,17 +1069,19 @@ copyright {
 
 .services-banner {
         /* Position above the animated background */
-        position: absolute;
+        position: relative;
         z-index: 3; /* Higher than .animatedbg which has z-index: 1 */
       
         /* Spacing & Layout */
         display: flex;
         align-items: center;
         justify-content: space-evenly; /* keep image on the right */
-        top:30px;
+        top:0em;
         left: 0px;
-        width:100vw;
+        width:100%;
         padding-right: 0px;
+        height: 80vh;
+        overflow: hidden;
       
 }
       
@@ -1080,24 +1089,27 @@ copyright {
 .services-banner-content {
         text-align: left;
         max-width: 600px; /* adjust as needed */
-        padding-top: 50px;
-        align-content: start;
+        padding-top: 2em;
+        align-content: center;
         
 }
       
-      .services-title {
-        font-size: 4em; /* reuse or tweak to match your design */
+      .banner-services-title {
+        font-size: 5em; /* reuse or tweak to match your design */
         color: var(--color-black);
-        padding: 0px  0px 0px 25px;
+        padding: 0px  0px 0px 50px;
         align-content: start;
       }
       
       .services-subtitle {
         margin: 0;
-        font-size: 1.8em;
+        font-size: 1.5em;
         line-height: 1.4;
         color: var(--color-black);
-        padding:0px 0px 0px 30px;
+        padding:0px 10px 0px 10px;
+        position: relative;
+        
+
       }
       
       /* Image rules */
@@ -1105,9 +1117,10 @@ copyright {
         width: 100%;
         height: auto;
         display: block;
-        max-width: 550px;
+        max-width: 600px;
         overflow: hidden;
-        padding: 50px 50px 0px 50px;
+        padding: 50px 20px 0px 50px;
+        position: relative;
       }
       
       /* Responsive: stack on smaller screens */
@@ -1115,19 +1128,13 @@ copyright {
 
         .services-banner {
           flex-direction: column;
-          justify-content:space-between;
-          height: 100vh;
+          height: 90vh;
           text-align: center;
           margin-top: -5em;
 
         }
       
-        .services-image {
-          max-width: 90%;
-          align-self: center;
-          padding: 0px 0px 0px 0px;
-          position:relative;         
-        }
+        
         
         .services-title {
         padding-top: 1em;
@@ -1143,15 +1150,292 @@ copyright {
             padding-top:1em ;
         }
         .animatedbg {
-            position: relative;
+            position: absolute;
             width: 100vw;
-            height: 100vh;
+            height: 80vh;
             padding-top: 0em;
             max-height:100vh;
             align-content: center;
             justify-content: center;
         }
+
+        .banner-services-title {
+            font-size: 4em;
+            padding-top:150px;
+            position: relative;
+            text-align: center;
+           padding-left: 0;
+           padding-right: 0;
+            margin:0;
+            position: relative;
+
+        }
+
         
       }
 
-      
+    .services-overview-page {
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Space Grotesk", sans-serif;
+        color: #191A23;
+        position: relative;
+        background-color:var(--color-white)
+
+    }
+
+    .service-content {
+        text-align: left; /* Aligns text to the left */
+        flex-grow: 1; /* Allows the text block to take up any extra space */
+    }
+    
+    
+    .services-overview-page__title {
+        padding: 0em;
+        margin: 1em;
+        box-sizing: border-box;
+        font-family: "Space Grotesk", sans-serif;
+        color: #191A23;
+        display: flex;
+        align-items: start;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    
+    .services-overview-page__items {
+        box-sizing: border-box;
+        font-family: "Space Grotesk", sans-serif;
+        color: #191A23;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        margin-top: .5rem;
+        max-width: 100vw;
+        padding: 1.5em;
+    }
+    
+    .services-overview-page__item {
+        margin: 1em;
+        box-sizing: border-box;
+        font-family: "Space Grotesk", sans-serif;
+        color: #333330;
+        background-color: #F3F3F3;
+        border-radius: 45px;
+        border: 1px solid black;
+        box-shadow: 5px 5px 0px 0px rgba(25,26,35,1);
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .services-overview-page h1 {
+        box-sizing: border-box;
+        font-family: "Space Grotesk", sans-serif;
+        color: #191A23;
+        background-color: none;
+        padding: .5em;
+        font-size: 4em;
+        font-weight: 600;
+        width: 100%;
+        text-align: center;
+        
+    }
+    
+    .services-overview-page p {
+        padding: .5em;
+        margin: 0em;
+        box-sizing: border-box;
+        font-family: "Space Grotesk", sans-serif;
+        color: #000001;
+        width: 100%;
+        font-size: 28px;
+        text-align: left;
+        padding-bottom: 0em;
+        padding-top:0em ;
+        position: relative;
+    }
+    
+    .services-overview-page__item--orange {
+        margin: 1em;
+        box-sizing: border-box;
+        font-family: "Space Grotesk", sans-serif;
+        color: #333330;
+        border-radius: 45px;
+        border: 1px solid black;
+        -webkit-box-shadow: 5px 5px 0px 0px #333330;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #ff6232;
+    }
+    
+    .services-overview-page__item--black {
+        margin: 1em;
+        box-sizing: border-box;
+        font-family: "Space Grotesk", sans-serif;
+        color: #fffffa;
+        border-radius: 45px;
+        border: 1px solid black;
+        -webkit-box-shadow:  5px 5px 0px 0px rgba(25,26,35,1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #333330;
+    }
+    
+    .services-overview-page__more {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Provides spacing between the icon and text */
+    }
+    
+    .services-overview-page__more i {
+        font-size: 46px;
+        color: #1d6aff;
+        margin-top: 0;
+        border-radius: 30px;
+        padding: 10px;
+        width: 0.8em;
+        height: 0.5em;
+        text-align: center;
+    }
+    
+    .services-overview-page__more i:hover {
+        color: #fcff55;
+    }
+    
+    .services-overview-page__more span {
+        padding-top: 20px;
+        font-size: 18px;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    .services-overview-page__item img {
+        width: 100px; /* Sets a fixed width */
+        height: auto; /* Keeps the aspect ratio of the image */
+        margin-left: 20px; /* Adds space between the text and the image */
+    }
+    
+    /* Styles for desktop positioning */
+.services-banner-btn-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em; /* Adjust spacing as needed */
+}
+
+/* Ensure it doesn't affect mobile */
+@media (max-width: 768px) {
+    .services-banner-btn-wrapper {
+        margin-top: 1em; /* Keep consistent spacing */
+    }
+}
+
+    @media screen and (max-width: 768px) {
+        .services-overview-page__items {
+            grid-template-columns: 1fr; /* Change to a single column */
+            padding: 1em; /* Reduce padding for smaller screens */
+            margin: 1em;
+        }
+    
+        .services-overview-page__item {
+            flex-direction: row; /* Stack content inside the tile */
+            text-align: center;
+            padding: 1.5em;
+        }
+    
+
+
+        .services-overview-page p {
+            justify-content: left;
+            text-align: center;
+            position: relative;
+            font-size: 18px;
+            width: 100%; /* Adjust text width */
+            margin: 1em;
+        }   
+        .services-overview-page h1 {
+            justify-content: space-between;
+            text-align: center;
+            width: 100%;
+            padding: .5em;
+        }   
+        
+        .services-overview-page__title {
+            flex-wrap: wrap;
+        }
+        .services-overview-page__title p {
+            padding: 0px;
+            margin: 0em;
+            font-size: 24px;
+            text-align: left;
+        
+        }
+
+        .services-overview-page__item img {
+            width: 100px; 
+
+        }
+    }
+    
+    @media (min-width: 769px) and (max-width: 1024px) {
+
+        .banner-services-title {
+            font-size: 4em;
+            text-align: center;
+           padding-left: 0;
+           padding-right: 0;
+            margin:1em;
+            position: relative;
+
+        }
+
+    .services-banner {
+        flex-direction: column;
+          text-align: center;
+
+    }
+        .services-overview-page {
+            padding:0em 0em; /* Reduce padding */
+        }
+    
+        .services-overview-page__title {
+            padding: 3em;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+    
+        .services-overview-page__items {
+            grid-template-columns: repeat(2, 1fr); /* Keep two-column layout */
+            padding: 0em 0em 2em 0em;
+            grid-column-gap: 15px; /* Reduce column gap */
+            grid-row-gap: 15px; /* Reduce row gap */
+        }
+    
+        
+    
+        .services-overview-page__item h2 {
+            font-size: 1.5em; /* Decrease font size slightly */
+            text-align: left;
+            padding: 0em;
+        }
+
+        .services-overview-page h1 {
+            padding: 0em;
+            text-align: center;
+            width: 100%;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+        }
+
+        
+
+
+    }
+    
